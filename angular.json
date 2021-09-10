@@ -1,6 +1,31 @@
 {
   "version": 1,
   "projects": {
+    "feature-auth": {
+      "projectType": "library",
+      "root": "libs/feature/auth",
+      "sourceRoot": "libs/feature/auth/src",
+      "prefix": "spotify-web-player",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature/auth"],
+          "options": {
+            "jestConfig": "libs/feature/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature/auth/src/**/*.ts",
+              "libs/feature/auth/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "spotify-web-player": {
       "projectType": "application",
       "root": "apps/spotify-web-player",
@@ -52,7 +77,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "apps/spotify-web-player/src/environments/environment.ts",
+                  "with": "apps/spotify-web-player/src/environments/environment.local.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"

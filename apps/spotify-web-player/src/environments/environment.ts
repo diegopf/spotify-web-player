@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  SPOTIFY_API_KEY: '',
 };
 
 /*
