@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 
 apps/spotify-web-player/src/environments/environment.local.ts
+.env
