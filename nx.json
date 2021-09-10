@@ -30,6 +30,9 @@
     "feature-auth": {
       "tags": []
     },
+    "feature-search": {
+      "tags": []
+    },
     "spotify-web-player": {
       "tags": []
     },

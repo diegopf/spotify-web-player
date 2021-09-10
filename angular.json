@@ -26,6 +26,31 @@
         }
       }
     },
+    "feature-search": {
+      "projectType": "library",
+      "root": "libs/feature/search",
+      "sourceRoot": "libs/feature/search/src",
+      "prefix": "spotify-web-player",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature/search"],
+          "options": {
+            "jestConfig": "libs/feature/search/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature/search/src/**/*.ts",
+              "libs/feature/search/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "spotify-web-player": {
       "projectType": "application",
       "root": "apps/spotify-web-player",
