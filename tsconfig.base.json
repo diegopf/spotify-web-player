@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@spotify-web-player/api": ["libs/feature/api/src/index.ts"],
       "@spotify-web-player/auth": ["libs/feature/auth/src/index.ts"],
       "@spotify-web-player/search": ["libs/feature/search/src/index.ts"]
     }
