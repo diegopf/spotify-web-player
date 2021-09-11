@@ -8,6 +8,7 @@ import { SpotifyApiService } from '@spotify-web-player/api';
   styleUrls: ['./search-view.component.scss'],
 })
 export class SearchViewComponent implements OnInit {
+  elements: SpotifyApi.PagingObject<SpotifyApi.ArtistObjectFull> | undefined;
   constructor(
     private spotifyApiService: SpotifyApiService,
     private router: Router,
@@ -17,7 +18,9 @@ export class SearchViewComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(({ searchKeywords }) => {
       if (searchKeywords) {
-        this.spotifyApiService.search(searchKeywords).subscribe();
+        this.spotifyApiService.search(searchKeywords).subscribe((data) => {
+          this.elements = data.artists;
+        });
       }
     });
   }

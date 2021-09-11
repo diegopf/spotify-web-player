@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InputModule } from '@spotify-web-player/shared';
+import { InputModule, ListModule } from '@spotify-web-player/shared';
 import { SearchViewComponent } from './components/search-view/search-view.component';
 
 const routes: Routes = [
@@ -12,7 +12,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes), InputModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    InputModule,
+    ListModule,
+  ],
   exports: [SearchViewComponent],
   declarations: [SearchViewComponent],
   bootstrap: [SearchViewComponent],
