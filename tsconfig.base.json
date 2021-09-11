@@ -17,6 +17,7 @@
     "paths": {
       "@spotify-web-player/api": ["libs/feature/api/src/index.ts"],
       "@spotify-web-player/auth": ["libs/feature/auth/src/index.ts"],
+      "@spotify-web-player/artist": ["libs/feature/artist/src/index.ts"],
       "@spotify-web-player/search": ["libs/feature/search/src/index.ts"],
       "@spotify-web-player/shared": ["libs/shared/src/index.ts"]
     }
