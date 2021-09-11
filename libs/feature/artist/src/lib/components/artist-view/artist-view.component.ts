@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { SpotifyApiService } from '@spotify-web-player/api';
 import { Subscription } from 'rxjs';
 
@@ -10,10 +10,13 @@ import { Subscription } from 'rxjs';
 })
 export class ArtistViewComponent implements OnInit, OnDestroy {
   artist: SpotifyApi.SingleArtistResponse | undefined;
+  albums: SpotifyApi.ArtistsAlbumsResponse | undefined;
+  relatedArtists: SpotifyApi.ArtistsRelatedArtistsResponse | undefined;
+  topTracks: SpotifyApi.ArtistsTopTracksResponse | undefined;
+
   private subscription = new Subscription();
   constructor(
     private spotifyApiService: SpotifyApiService,
-    private router: Router,
     private route: ActivatedRoute
   ) {}
 
@@ -23,6 +26,17 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
         this.spotifyApiService
           .getArtist(id)
           .subscribe((artist) => (this.artist = artist));
+        this.spotifyApiService
+          .getArtistAlbums(id)
+          .subscribe((albums) => (this.albums = albums));
+        this.spotifyApiService
+          .getArtistRelatedArtists(id)
+          .subscribe(
+            (relatedArtists) => (this.relatedArtists = relatedArtists)
+          );
+        this.spotifyApiService
+          .getArtistTopTracks(id)
+          .subscribe((topTracks) => (this.topTracks = topTracks));
       })
     );
   }
@@ -44,6 +58,6 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
   }
 
   get followers() {
-    return this.artist?.followers.total ?? '0';
+    return `${this.artist?.followers.total} followers` ?? '0 followers';
   }
 }
