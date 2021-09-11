@@ -1,6 +1,31 @@
 {
   "version": 1,
   "projects": {
+    "feature-api": {
+      "projectType": "library",
+      "root": "libs/feature/api",
+      "sourceRoot": "libs/feature/api/src",
+      "prefix": "spotify-web-player",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature/api"],
+          "options": {
+            "jestConfig": "libs/feature/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature/api/src/**/*.ts",
+              "libs/feature/api/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "feature-auth": {
       "projectType": "library",
       "root": "libs/feature/auth",
@@ -21,6 +46,56 @@
             "lintFilePatterns": [
               "libs/feature/auth/src/**/*.ts",
               "libs/feature/auth/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "feature-search": {
+      "projectType": "library",
+      "root": "libs/feature/search",
+      "sourceRoot": "libs/feature/search/src",
+      "prefix": "spotify-web-player",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature/search"],
+          "options": {
+            "jestConfig": "libs/feature/search/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature/search/src/**/*.ts",
+              "libs/feature/search/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "shared": {
+      "projectType": "library",
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
+      "prefix": "spotify-web-player",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared"],
+          "options": {
+            "jestConfig": "libs/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/src/**/*.ts",
+              "libs/shared/src/**/*.html"
             ]
           }
         }

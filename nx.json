@@ -27,7 +27,16 @@
     ]
   },
   "projects": {
+    "feature-api": {
+      "tags": []
+    },
     "feature-auth": {
+      "tags": []
+    },
+    "feature-search": {
+      "tags": []
+    },
+    "shared": {
       "tags": []
     },
     "spotify-web-player": {
