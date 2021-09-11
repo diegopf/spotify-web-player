@@ -22,3 +22,20 @@
   [ariaLabel]="'followers'"
   [label]="followers"
 ></spotify-web-player-chip>
+
+<spotify-web-player-grid-list>
+  <ng-container ngProjectAs="[content]">
+    <a
+      *ngFor="let artist of relatedArtistsCollection"
+      [routerLink]="['/artist', artist.id]"
+    >
+      <span>{{ artist.name }}</span
+      ><br />
+      <span class="smaller">Artist</span>
+      <spotify-web-player-thumbnail
+        [image]="artist.images[0]?.url"
+        [ariaLabel]="artist.name"
+      ></spotify-web-player-thumbnail>
+    </a>
+  </ng-container>
+</spotify-web-player-grid-list>

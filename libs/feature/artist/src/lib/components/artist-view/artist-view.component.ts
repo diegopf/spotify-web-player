@@ -60,4 +60,8 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
   get followers() {
     return `${this.artist?.followers.total} followers` ?? '0 followers';
   }
+
+  get relatedArtistsCollection() {
+    return this.relatedArtists?.artists;
+  }
 }
