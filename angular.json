@@ -1,6 +1,31 @@
 {
   "version": 1,
   "projects": {
+    "feature-album": {
+      "projectType": "library",
+      "root": "libs/feature/album",
+      "sourceRoot": "libs/feature/album/src",
+      "prefix": "spotify-web-player",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature/album"],
+          "options": {
+            "jestConfig": "libs/feature/album/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature/album/src/**/*.ts",
+              "libs/feature/album/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "feature-api": {
       "projectType": "library",
       "root": "libs/feature/api",
