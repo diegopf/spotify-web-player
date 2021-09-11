@@ -30,6 +30,9 @@
     "feature-api": {
       "tags": []
     },
+    "feature-artist": {
+      "tags": []
+    },
     "feature-auth": {
       "tags": []
     },

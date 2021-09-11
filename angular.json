@@ -26,6 +26,31 @@
         }
       }
     },
+    "feature-artist": {
+      "projectType": "library",
+      "root": "libs/feature/artist",
+      "sourceRoot": "libs/feature/artist/src",
+      "prefix": "spotify-web-player",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature/artist"],
+          "options": {
+            "jestConfig": "libs/feature/artist/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature/artist/src/**/*.ts",
+              "libs/feature/artist/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "feature-auth": {
       "projectType": "library",
       "root": "libs/feature/auth",
