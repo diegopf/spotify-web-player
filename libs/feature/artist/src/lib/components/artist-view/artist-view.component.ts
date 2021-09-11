@@ -38,4 +38,12 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
   getArtistName() {
     return this.artist?.name || '';
   }
+
+  get genres() {
+    return this.artist?.genres ?? [];
+  }
+
+  get followers() {
+    return this.artist?.followers.total ?? '0';
+  }
 }

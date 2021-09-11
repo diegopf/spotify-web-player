@@ -4,3 +4,14 @@
   [image]="getArtistImage()"
   [ariaLabel]="getArtistName()"
 ></spotify-web-player-thumbnail>
+
+<spotify-web-player-chip
+  *ngFor="let genre of genres"
+  [label]="genre"
+  [ariaLabel]="'genre'"
+></spotify-web-player-chip>
+
+<spotify-web-player-chip
+  [ariaLabel]="'followers'"
+  [label]="followers"
+></spotify-web-player-chip>
