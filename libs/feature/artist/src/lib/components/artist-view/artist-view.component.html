@@ -1,8 +1,15 @@
+<div>
+  <span aria-label="Go back to search" [routerLink]="['/search']"
+    >Go back to search</span
+  >
+  <h3>{{ artistName }}</h3>
+</div>
+
 <spotify-web-player-thumbnail
   [width]="200"
   [height]="200"
   [image]="getArtistImage()"
-  [ariaLabel]="getArtistName()"
+  [ariaLabel]="artistName"
 ></spotify-web-player-thumbnail>
 
 <spotify-web-player-chip

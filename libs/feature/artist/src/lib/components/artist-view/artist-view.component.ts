@@ -49,7 +49,7 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
     return this.artist?.images[0].url;
   }
 
-  getArtistName() {
+  get artistName() {
     return this.artist?.name || '';
   }
 
