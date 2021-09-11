@@ -1,11 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { SearchInputComponent } from './components/search-input/search-input.component';
+import { RouterModule, Routes } from '@angular/router';
+import { InputModule } from '@spotify-web-player/shared';
+import { SearchViewComponent } from './components/search-view/search-view.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: SearchViewComponent,
+  },
+];
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule],
-  exports: [SearchInputComponent],
-  declarations: [SearchInputComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), InputModule],
+  exports: [SearchViewComponent],
+  declarations: [SearchViewComponent],
+  bootstrap: [SearchViewComponent],
 })
 export class FeatureSearchModule {}
