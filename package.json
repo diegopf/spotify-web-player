@@ -8,7 +8,8 @@
     "start": "nx serve",
     "build": "ts-node config-prod-env.ts && nx build",
     "test": "nx run-many --all --target=test --code-coverage=true",
-    "test:auth": "nx test feature-auth --code-coverage=true"
+    "test:auth": "nx test feature-auth --code-coverage=true",
+    "test:ci": "npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI"
   },
   "private": true,
   "dependencies": {
