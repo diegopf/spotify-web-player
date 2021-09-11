@@ -28,7 +28,10 @@
       <h3>Albums</h3>
       <spotify-web-player-grid-list>
         <ng-container ngProjectAs="[content]">
-          <a *ngFor="let album of albums.items" [routerLink]="['/albums']">
+          <a
+            *ngFor="let album of albums.items"
+            [routerLink]="['/album', album.id]"
+          >
             <span>{{ album.name }}</span>
             <br />
             <span class="smaller">{{ reduceArtists(album) }}</span>
