@@ -19,6 +19,13 @@ const routes: Routes = [
             (m) => m.FeatureSearchModule
           ),
       },
+      {
+        path: 'artist/:id',
+        loadChildren: () =>
+          import('@spotify-web-player/artist').then(
+            (m) => m.FeatureArtistModule
+          ),
+      },
     ],
   },
 ];
