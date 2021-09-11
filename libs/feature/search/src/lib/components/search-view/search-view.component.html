@@ -7,7 +7,10 @@
   <div class="content">
     <spotify-web-player-grid-list>
       <ng-container *ngIf="artists" ngProjectAs="[topSection]">
-        <a *ngFor="let artist of artists.items" [routerLink]="['/artists']">
+        <a
+          *ngFor="let artist of artists.items"
+          [routerLink]="['/artist', artist.id]"
+        >
           <span>{{ artist.name }}</span
           ><br />
           <span class="smaller">Artist</span>
