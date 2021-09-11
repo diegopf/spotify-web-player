@@ -16,4 +16,10 @@ export class SpotifyApiService {
       )
       .pipe(take(1));
   }
+
+  getArtist(id: string) {
+    return this.http
+      .get<SpotifyApi.SingleArtistResponse>(`${this.baseApiUrl}/artists/${id}`)
+      .pipe(take(1));
+  }
 }
