@@ -1,15 +1,18 @@
-input {
-  width: 300px;
-  height: 40px;
-  background: none;
-  border-radius: 20px;
-  border: 2px solid black;
-  font-size: 14px;
-  outline: none;
-  transition: 0.5s;
-  box-sizing: border-box;
-  &:focus {
-    width: 350px;
-    border-radius: 10px;
+:host {
+  display: block;
+
+  input {
+    width: 300px;
+    background: none;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    outline: none;
+    transition: 0.5s;
+    box-sizing: border-box;
+    &:focus {
+      width: 350px;
+      border-radius: 10px;
+    }
   }
 }
