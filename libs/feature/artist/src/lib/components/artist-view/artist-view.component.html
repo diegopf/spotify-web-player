@@ -23,6 +23,30 @@
   [label]="followers"
 ></spotify-web-player-chip>
 
+<h3>Top tracks</h3>
+<spotify-web-player-grid-list>
+  <ng-container ngProjectAs="[content]">
+    <a *ngFor="let track of artistTopTracks">
+      <span>{{ track.name }}</span>
+    </a>
+  </ng-container>
+</spotify-web-player-grid-list>
+
+<h3>Albums</h3>
+<spotify-web-player-grid-list>
+  <ng-container ngProjectAs="[content]">
+    <a *ngFor="let album of artistAlbums">
+      <span>{{ album.name }}</span
+      ><br />
+      <spotify-web-player-thumbnail
+        [image]="album.images[0]?.url"
+        [ariaLabel]="album.name"
+      ></spotify-web-player-thumbnail>
+    </a>
+  </ng-container>
+</spotify-web-player-grid-list>
+
+<h3>related artists</h3>
 <spotify-web-player-grid-list>
   <ng-container ngProjectAs="[content]">
     <a

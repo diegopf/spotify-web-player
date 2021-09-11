@@ -64,4 +64,12 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
   get relatedArtistsCollection() {
     return this.relatedArtists?.artists;
   }
+
+  get artistAlbums() {
+    return this.albums?.items;
+  }
+
+  get artistTopTracks() {
+    return this.topTracks?.tracks;
+  }
 }
