@@ -5,8 +5,8 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AuthService } from '@spotify-web-player/auth';
 import { Observable } from 'rxjs';
+import { AuthService } from '../services';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
