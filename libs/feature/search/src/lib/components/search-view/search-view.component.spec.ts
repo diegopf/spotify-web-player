@@ -1,8 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SpotifyApiService } from '@spotify-web-player/api';
-import { ImageModule, InputModule } from '@spotify-web-player/shared';
-import { SearchLayoutComponent } from '../search-layout/search-layout.component';
+import {
+  ImageModule,
+  InputModule,
+  ListModule,
+} from '@spotify-web-player/shared';
 import { SearchViewComponent } from './search-view.component';
 
 describe('SearchViewComponent', () => {
@@ -11,8 +14,8 @@ describe('SearchViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SearchViewComponent, SearchLayoutComponent],
-      imports: [RouterTestingModule, ImageModule, InputModule],
+      declarations: [SearchViewComponent],
+      imports: [RouterTestingModule, ImageModule, InputModule, ListModule],
       providers: [
         {
           provide: SpotifyApiService,

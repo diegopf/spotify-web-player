@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ListComponent } from './components/list/list.component';
+import { GridListComponent } from './components/grid-list/grid-list.component';
 
 @NgModule({
   imports: [CommonModule],
-  exports: [ListComponent],
-  declarations: [ListComponent],
+  exports: [GridListComponent],
+  declarations: [GridListComponent],
   providers: [],
 })
 export class ListModule {}
