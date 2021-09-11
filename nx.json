@@ -36,6 +36,9 @@
     "feature-search": {
       "tags": []
     },
+    "shared": {
+      "tags": []
+    },
     "spotify-web-player": {
       "tags": []
     },
