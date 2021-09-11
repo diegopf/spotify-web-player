@@ -5,34 +5,45 @@
     ></spotify-web-player-search-input>
   </div>
   <div class="content">
-    <spotify-web-player-grid-list>
-      <ng-container *ngIf="artists" ngProjectAs="[topSection]">
-        <a *ngFor="let artist of artists.items" [routerLink]="['/artists']">
-          <span>{{ artist.name }}</span
-          ><br />
-          <span class="smaller">Artist</span>
-          <spotify-web-player-thumbnail
-            [image]="artist.images[0]?.url"
-            [ariaLabel]="artist.name"
-          ></spotify-web-player-thumbnail>
-        </a>
-      </ng-container>
-      <ng-container *ngIf="albums" ngProjectAs="[middleSection]">
-        <a *ngFor="let album of albums.items" [routerLink]="['/albums']">
-          <span>{{ album.name }}</span>
-          <br />
-          <span class="smaller">{{ reduceArtists(album) }}</span>
-          <spotify-web-player-thumbnail
-            [image]="album.images[0]?.url"
-            [ariaLabel]="album.name"
-          ></spotify-web-player-thumbnail>
-        </a>
-      </ng-container>
-      <ng-container *ngIf="emptyResults" ngProjectAs="[emptyResults]">
-        <div class="empty">
-          <h2>Nothing found!</h2>
-        </div>
-      </ng-container>
-    </spotify-web-player-grid-list>
+    <ng-container *ngIf="artists">
+      <h3>Artists</h3>
+      <spotify-web-player-grid-list>
+        <ng-container ngProjectAs="[content]">
+          <a
+            *ngFor="let artist of artists.items"
+            [routerLink]="['/artist', artist.id]"
+          >
+            <span>{{ artist.name }}</span
+            ><br />
+            <span class="smaller">Artist</span>
+            <spotify-web-player-thumbnail
+              [image]="artist.images[0]?.url"
+              [ariaLabel]="artist.name"
+            ></spotify-web-player-thumbnail>
+          </a>
+        </ng-container>
+      </spotify-web-player-grid-list>
+    </ng-container>
+    <ng-container *ngIf="albums">
+      <h3>Albums</h3>
+      <spotify-web-player-grid-list>
+        <ng-container ngProjectAs="[content]">
+          <a *ngFor="let album of albums.items" [routerLink]="['/albums']">
+            <span>{{ album.name }}</span>
+            <br />
+            <span class="smaller">{{ reduceArtists(album) }}</span>
+            <spotify-web-player-thumbnail
+              [image]="album.images[0]?.url"
+              [ariaLabel]="album.name"
+            ></spotify-web-player-thumbnail>
+          </a>
+        </ng-container>
+      </spotify-web-player-grid-list>
+    </ng-container>
+    <ng-container *ngIf="emptyResults">
+      <div class="empty">
+        <h2>Nothing found!</h2>
+      </div>
+    </ng-container>
   </div>
 </div>
