@@ -1,0 +1,11 @@
+<spotify-web-player-thumbnail
+  [width]="200"
+  [height]="200"
+  [image]="albumCover"
+  [ariaLabel]="albumName"
+></spotify-web-player-thumbnail>
+
+<audio *ngFor="let track of tracks" controls>
+  <source [src]="track.preview_url" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
