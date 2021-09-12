@@ -61,9 +61,7 @@
         [route]="'/artist'"
         [routeArg]="artist.id"
         [mainLabel]="artist.name"
-        [secondaryLabel]="'Artist'"
       >
-        <span class="smaller">Artist</span>
         <spotify-web-player-thumbnail
           [image]="artist.images[0]?.url"
           [ariaLabel]="artist.name"
