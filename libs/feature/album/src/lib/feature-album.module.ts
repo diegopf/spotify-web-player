@@ -2,17 +2,16 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
-  CardModule,
   ImageModule,
-  InputModule,
-  ListModule,
+  TrackModule,
+  ViewModule,
 } from '@spotify-web-player/shared';
-import { SearchViewComponent } from './components/search-view/search-view.component';
+import { AlbumViewComponent } from './components/album-view/album-view.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SearchViewComponent,
+    component: AlbumViewComponent,
   },
 ];
 
@@ -20,13 +19,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    InputModule,
-    ListModule,
     ImageModule,
-    CardModule,
+    TrackModule,
+    ViewModule,
   ],
-  exports: [SearchViewComponent],
-  declarations: [SearchViewComponent],
-  bootstrap: [SearchViewComponent],
+  declarations: [AlbumViewComponent],
 })
-export class FeatureSearchModule {}
+export class FeatureAlbumModule {}

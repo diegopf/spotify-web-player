@@ -26,6 +26,11 @@ const routes: Routes = [
             (m) => m.FeatureArtistModule
           ),
       },
+      {
+        path: 'album/:id',
+        loadChildren: () =>
+          import('@spotify-web-player/album').then((m) => m.FeatureAlbumModule),
+      },
     ],
   },
 ];

@@ -85,4 +85,16 @@ export class SpotifyApiService {
       )
       .pipe(take(1));
   }
+
+  /**
+   *
+   * @param id {string} album id to search for
+   * @returns {Observable<SpotifyApi.SingleAlbumResponse>}
+   * returns an observable which will resolve the album related info
+   */
+  getAlbum(id: string): Observable<SpotifyApi.SingleAlbumResponse> {
+    return this.http
+      .get<SpotifyApi.SingleAlbumResponse>(`${this.baseApiUrl}/albums/${id}`)
+      .pipe(take(1));
+  }
 }

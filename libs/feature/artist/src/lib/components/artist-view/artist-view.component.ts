@@ -9,10 +9,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./artist-view.component.scss'],
 })
 export class ArtistViewComponent implements OnInit, OnDestroy {
-  artist: SpotifyApi.SingleArtistResponse | undefined;
-  albums: SpotifyApi.ArtistsAlbumsResponse | undefined;
-  relatedArtists: SpotifyApi.ArtistsRelatedArtistsResponse | undefined;
-  topTracks: SpotifyApi.ArtistsTopTracksResponse | undefined;
+  artist!: SpotifyApi.SingleArtistResponse;
+  albums!: SpotifyApi.ArtistsAlbumsResponse;
+  relatedArtists!: SpotifyApi.ArtistsRelatedArtistsResponse;
+  topTracks!: SpotifyApi.ArtistsTopTracksResponse;
 
   private subscription = new Subscription();
   constructor(

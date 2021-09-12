@@ -2,9 +2,12 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
+  CardModule,
   ChipModule,
   ImageModule,
   ListModule,
+  TrackModule,
+  ViewModule,
 } from '@spotify-web-player/shared';
 import { ArtistViewComponent } from './components/artist-view/artist-view.component';
 
@@ -22,6 +25,9 @@ const routes: Routes = [
     ImageModule,
     ChipModule,
     ListModule,
+    CardModule,
+    TrackModule,
+    ViewModule,
   ],
   declarations: [ArtistViewComponent],
 })

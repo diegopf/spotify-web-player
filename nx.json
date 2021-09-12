@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "feature-album": {
+      "tags": []
+    },
     "feature-api": {
       "tags": []
     },
