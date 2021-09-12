@@ -7,5 +7,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class TrackComponent {
   @Input()
-  track!: string;
+  track!: string | null;
 }

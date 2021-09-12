@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./album-view.component.scss'],
 })
 export class AlbumViewComponent implements OnInit, OnDestroy {
-  album: SpotifyApi.SingleAlbumResponse | undefined;
+  album!: SpotifyApi.SingleAlbumResponse;
   private subscription = new Subscription();
   constructor(
     private spotifyApiService: SpotifyApiService,
