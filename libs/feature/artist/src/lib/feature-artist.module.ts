@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
+  CardModule,
   ChipModule,
   ImageModule,
   ListModule,
@@ -22,6 +23,7 @@ const routes: Routes = [
     ImageModule,
     ChipModule,
     ListModule,
+    CardModule,
   ],
   declarations: [ArtistViewComponent],
 })

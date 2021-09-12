@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
+  CardModule,
   ImageModule,
   InputModule,
   ListModule,
@@ -22,6 +23,7 @@ const routes: Routes = [
     InputModule,
     ListModule,
     ImageModule,
+    CardModule,
   ],
   exports: [SearchViewComponent],
   declarations: [SearchViewComponent],

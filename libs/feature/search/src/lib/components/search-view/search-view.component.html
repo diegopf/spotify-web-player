@@ -9,18 +9,18 @@
       <h3>Artists</h3>
       <spotify-web-player-grid-list>
         <ng-container ngProjectAs="[content]">
-          <a
+          <spotify-web-player-card
             *ngFor="let artist of artists.items"
-            [routerLink]="['/artist', artist.id]"
+            [route]="'/artist'"
+            [routeArg]="artist.id"
+            [mainLabel]="artist.name"
+            [secondaryLabel]="'Artist'"
           >
-            <span>{{ artist.name }}</span
-            ><br />
-            <span class="smaller">Artist</span>
             <spotify-web-player-thumbnail
               [image]="artist.images[0]?.url"
               [ariaLabel]="artist.name"
             ></spotify-web-player-thumbnail>
-          </a>
+          </spotify-web-player-card>
         </ng-container>
       </spotify-web-player-grid-list>
     </ng-container>
@@ -28,18 +28,18 @@
       <h3>Albums</h3>
       <spotify-web-player-grid-list>
         <ng-container ngProjectAs="[content]">
-          <a
+          <spotify-web-player-card
             *ngFor="let album of albums.items"
-            [routerLink]="['/album', album.id]"
+            [route]="'/album'"
+            [routeArg]="album.id"
+            [mainLabel]="album.name"
+            [secondaryLabel]="reduceArtists(album)"
           >
-            <span>{{ album.name }}</span>
-            <br />
-            <span class="smaller">{{ reduceArtists(album) }}</span>
             <spotify-web-player-thumbnail
               [image]="album.images[0]?.url"
               [ariaLabel]="album.name"
             ></spotify-web-player-thumbnail>
-          </a>
+          </spotify-web-player-card>
         </ng-container>
       </spotify-web-player-grid-list>
     </ng-container>
