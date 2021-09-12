@@ -14,10 +14,9 @@
             [route]="'/artist'"
             [routeArg]="artist.id"
             [mainLabel]="artist.name"
-            [secondaryLabel]="'Artist'"
           >
             <spotify-web-player-thumbnail
-              [image]="artist.images[0]?.url"
+              [image]="artist.images[1]?.url"
               [ariaLabel]="artist.name"
             ></spotify-web-player-thumbnail>
           </spotify-web-player-card>
@@ -36,7 +35,7 @@
             [secondaryLabel]="reduceArtists(album)"
           >
             <spotify-web-player-thumbnail
-              [image]="album.images[0]?.url"
+              [image]="album.images[1]?.url"
               [ariaLabel]="album.name"
             ></spotify-web-player-thumbnail>
           </spotify-web-player-card>
