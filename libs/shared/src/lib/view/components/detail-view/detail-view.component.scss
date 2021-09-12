@@ -1,0 +1,34 @@
+:host {
+  .section {
+    display: grid;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section--container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .section--title {
+    grid-template-columns: 0.4fr 1fr;
+    h3 {
+      justify-content: center;
+    }
+  }
+
+  .section--footer {
+    text-align: center;
+    display: block;
+  }
+
+  @media (max-width: 400px) {
+    .section--footer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+    }
+  }
+}
