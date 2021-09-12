@@ -62,7 +62,7 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
   }
 
   get relatedArtistsCollection() {
-    return this.relatedArtists?.artists;
+    return this.relatedArtists?.artists ?? [];
   }
 
   get artistAlbums() {
