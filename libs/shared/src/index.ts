@@ -1,3 +1,4 @@
+export * from './lib/card/card.module';
 export * from './lib/chip/chip.module';
 export * from './lib/image/image.module';
 export * from './lib/input/input.module';
