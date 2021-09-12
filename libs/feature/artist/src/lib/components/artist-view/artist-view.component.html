@@ -1,27 +1,31 @@
-<div>
-  <span aria-label="Go back to search" [routerLink]="['/search']"
-    >Go back to search</span
-  >
-  <h3>{{ artistName }}</h3>
+<div class="section section--container">
+  <div class="section section--title">
+    <span aria-label="Go back to search" [routerLink]="['/search']"
+      >Go back to search</span
+    >
+    <h3>{{ artistName }}</h3>
+  </div>
+  <div class="section section--content">
+    <spotify-web-player-thumbnail
+      [width]="200"
+      [height]="200"
+      [image]="getArtistImage()"
+      [ariaLabel]="artistName"
+    ></spotify-web-player-thumbnail>
+  </div>
+  <div class="section section--footer">
+    <spotify-web-player-chip
+      *ngFor="let genre of genres"
+      [label]="genre"
+      [ariaLabel]="'genre'"
+    ></spotify-web-player-chip>
+
+    <spotify-web-player-chip
+      [ariaLabel]="'followers'"
+      [label]="followers"
+    ></spotify-web-player-chip>
+  </div>
 </div>
-
-<spotify-web-player-thumbnail
-  [width]="200"
-  [height]="200"
-  [image]="getArtistImage()"
-  [ariaLabel]="artistName"
-></spotify-web-player-thumbnail>
-
-<spotify-web-player-chip
-  *ngFor="let genre of genres"
-  [label]="genre"
-  [ariaLabel]="'genre'"
-></spotify-web-player-chip>
-
-<spotify-web-player-chip
-  [ariaLabel]="'followers'"
-  [label]="followers"
-></spotify-web-player-chip>
 
 <h3>Top tracks</h3>
 <spotify-web-player-grid-list>
