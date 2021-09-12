@@ -1,6 +1,7 @@
 :host {
   display: grid;
   height: 100%;
+  background-color: var(--primaryColor);
 }
 
 .container {
@@ -14,6 +15,9 @@
     'toolbar'
     'content';
   overflow: hidden;
+  h3 {
+    color: var(--secondaryColor);
+  }
 }
 .toolbar {
   grid-area: toolbar;

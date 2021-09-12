@@ -3,14 +3,17 @@ a {
   text-decoration: none;
   text-align: center;
   transition: 0.2s;
-  border: 1px solid #dfe1e5;
+  border: 1px solid var(--secondaryColor);
   border-radius: 8px;
   &:hover,
   &:focus {
     transform: scale(1.1);
   }
 
-  span.smaller {
-    font-size: smaller;
+  span {
+    color: var(--secondaryColor);
+    &.smaller {
+      font-size: smaller;
+    }
   }
 }

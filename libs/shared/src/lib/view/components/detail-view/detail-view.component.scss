@@ -1,4 +1,6 @@
 :host {
+  display: block;
+  background-color: var(--primaryColor);
   .section {
     display: grid;
     align-items: center;
