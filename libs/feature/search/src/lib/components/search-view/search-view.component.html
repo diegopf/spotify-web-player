@@ -5,7 +5,7 @@
     ></spotify-web-player-search-input>
   </div>
   <div class="content">
-    <ng-container *ngIf="artists">
+    <ng-container *ngIf="artists && artists.items.length > 0">
       <h3>Artists</h3>
       <spotify-web-player-grid-list>
         <ng-container ngProjectAs="[content]">
@@ -24,7 +24,7 @@
         </ng-container>
       </spotify-web-player-grid-list>
     </ng-container>
-    <ng-container *ngIf="albums">
+    <ng-container *ngIf="albums && albums.items.length > 0">
       <h3>Albums</h3>
       <spotify-web-player-grid-list>
         <ng-container ngProjectAs="[content]">
