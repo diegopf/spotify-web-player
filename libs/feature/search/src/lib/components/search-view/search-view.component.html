@@ -43,6 +43,19 @@
         </ng-container>
       </spotify-web-player-grid-list>
     </ng-container>
+    <ng-container *ngIf="tracks && tracks.items.length > 0">
+      <h3>Tracks</h3>
+      <spotify-web-player-grid-list>
+        <ng-container ngProjectAs="[content]">
+          <spotify-web-player-track
+            *ngFor="let track of tracks.items"
+            [track]="track.preview_url"
+            [name]="track.name"
+          >
+          </spotify-web-player-track>
+        </ng-container>
+      </spotify-web-player-grid-list>
+    </ng-container>
     <ng-container *ngIf="emptyResults">
       <div class="empty">
         <h2>Nothing found!</h2>

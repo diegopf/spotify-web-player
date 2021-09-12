@@ -6,6 +6,7 @@ import {
   ImageModule,
   InputModule,
   ListModule,
+  TrackModule,
 } from '@spotify-web-player/shared';
 import { SearchViewComponent } from './components/search-view/search-view.component';
 
@@ -24,6 +25,7 @@ const routes: Routes = [
     ListModule,
     ImageModule,
     CardModule,
+    TrackModule,
   ],
   exports: [SearchViewComponent],
   declarations: [SearchViewComponent],

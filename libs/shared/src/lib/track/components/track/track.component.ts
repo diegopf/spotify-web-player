@@ -8,4 +8,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class TrackComponent {
   @Input()
   track!: string | null;
+  @Input()
+  name!: string;
 }
