@@ -30,6 +30,7 @@
 .content {
   grid-area: content;
   overflow: auto;
+  padding: 10px;
 
   .empty {
     margin: 0 auto;
