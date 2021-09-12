@@ -28,6 +28,9 @@
   <ng-container ngProjectAs="[content]">
     <a *ngFor="let track of artistTopTracks">
       <span>{{ track.name }}</span>
+      <spotify-web-player-track
+        [track]="track.preview_url"
+      ></spotify-web-player-track>
     </a>
   </ng-container>
 </spotify-web-player-grid-list>

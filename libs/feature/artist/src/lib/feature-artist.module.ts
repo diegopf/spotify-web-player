@@ -6,6 +6,7 @@ import {
   ChipModule,
   ImageModule,
   ListModule,
+  TrackModule,
 } from '@spotify-web-player/shared';
 import { ArtistViewComponent } from './components/artist-view/artist-view.component';
 
@@ -24,6 +25,7 @@ const routes: Routes = [
     ChipModule,
     ListModule,
     CardModule,
+    TrackModule,
   ],
   declarations: [ArtistViewComponent],
 })
