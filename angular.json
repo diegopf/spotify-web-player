@@ -169,10 +169,13 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "apps/spotify-web-player/src/favicon.ico",
-              "apps/spotify-web-player/src/assets"
+              "apps/spotify-web-player/src/assets",
+              "apps/spotify-web-player/src/manifest.webmanifest"
             ],
             "styles": ["apps/spotify-web-player/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "apps/spotify-web-player/ngsw-config.json"
           },
           "configurations": {
             "production": {
