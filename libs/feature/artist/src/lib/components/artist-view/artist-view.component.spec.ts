@@ -5,6 +5,7 @@ import {
   ChipModule,
   ImageModule,
   ListModule,
+  ViewModule,
 } from '@spotify-web-player/shared';
 import { ArtistViewComponent } from './artist-view.component';
 
@@ -14,7 +15,13 @@ describe('ArtistViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, ListModule, ImageModule, ChipModule],
+      imports: [
+        RouterTestingModule,
+        ListModule,
+        ImageModule,
+        ChipModule,
+        ViewModule,
+      ],
       declarations: [ArtistViewComponent],
       providers: [
         {

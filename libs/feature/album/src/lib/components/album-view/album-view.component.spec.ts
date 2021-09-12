@@ -1,7 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SpotifyApiService } from '@spotify-web-player/api';
-import { CardModule, ImageModule } from '@spotify-web-player/shared';
+import {
+  CardModule,
+  ImageModule,
+  ViewModule,
+} from '@spotify-web-player/shared';
 import { AlbumViewComponent } from './album-view.component';
 
 describe('AlbumViewComponent', () => {
@@ -10,7 +14,7 @@ describe('AlbumViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, CardModule, ImageModule],
+      imports: [RouterTestingModule, CardModule, ImageModule, ViewModule],
       declarations: [AlbumViewComponent],
       providers: [
         {
