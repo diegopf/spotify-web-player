@@ -5,6 +5,7 @@
   [attr.loading]="'lazy'"
   [style.width]="width + 'px'"
   [style.height]="height + 'px'"
+  (load)="loaded()"
 />
 <ng-template #noImage>
   <svg
