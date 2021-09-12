@@ -8,11 +8,11 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class CardComponent {
   @Input()
-  route: string | undefined;
+  route!: string;
   @Input()
-  routeArg: string | undefined;
+  routeArg!: string;
   @Input()
-  mainLabel: string | undefined;
+  mainLabel!: string;
   @Input()
-  secondaryLabel: string | undefined;
+  secondaryLabel!: string;
 }
