@@ -10,9 +10,9 @@ export class ThumbnailComponent {
   @Input()
   image: string | undefined;
   @Input()
-  width = 100;
+  width = 200;
   @Input()
-  height = 100;
+  height = 200;
   @Input()
   ariaLabel = '';
 }

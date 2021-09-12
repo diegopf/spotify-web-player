@@ -1,20 +1,27 @@
-<spotify-web-player-detail-view>
-  <ng-container ngProjectAs="[headerTitle]">
-    <span aria-label="Go back to search" [routerLink]="['/search']"
-      >Go back to search</span
-    >
-    <h3>{{ albumName }}</h3>
-  </ng-container>
-  <ng-container ngProjectAs="[headerContent]">
-    <spotify-web-player-thumbnail
-      [width]="200"
-      [height]="200"
-      [image]="albumCover"
-      [ariaLabel]="albumName"
-    ></spotify-web-player-thumbnail>
-  </ng-container>
-  <spotify-web-player-track
-    *ngFor="let track of tracks"
-    [track]="track.preview_url"
-  ></spotify-web-player-track>
-</spotify-web-player-detail-view>
+<ng-container *ngIf="album">
+  <spotify-web-player-detail-view>
+    <ng-container ngProjectAs="[headerTitle]">
+      <a aria-label="Go back to search" [routerLink]="['/search']"
+        >Go back to search</a
+      >
+      <h3>{{ albumName }}</h3>
+    </ng-container>
+    <ng-container ngProjectAs="[headerContent]">
+      <spotify-web-player-thumbnail
+        [width]="200"
+        [height]="200"
+        [image]="albumCover"
+        [ariaLabel]="albumName"
+      ></spotify-web-player-thumbnail>
+    </ng-container>
+    <spotify-web-player-grid-list>
+      <ng-container ngProjectAs="[content]">
+        <spotify-web-player-track
+          *ngFor="let track of tracks"
+          [name]="track.name"
+          [track]="track.preview_url"
+        ></spotify-web-player-track>
+      </ng-container>
+    </spotify-web-player-grid-list>
+  </spotify-web-player-detail-view>
+</ng-container>

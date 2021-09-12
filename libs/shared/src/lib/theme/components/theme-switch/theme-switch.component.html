@@ -1,0 +1,14 @@
+<ng-container *ngIf="darkThemeEnabled; else sun">
+  <span class="icon">🔅</span>
+</ng-container>
+<ng-template #sun>
+  <span class="icon">🔆</span>
+</ng-template>
+<label class="switch">
+  <input
+    type="checkbox"
+    [checked]="darkThemeEnabled"
+    (change)="switchTheme()"
+  />
+  <span class="slider slider--round"></span>
+</label>

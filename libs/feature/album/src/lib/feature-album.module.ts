@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
   ImageModule,
+  ListModule,
   TrackModule,
   ViewModule,
 } from '@spotify-web-player/shared';
@@ -22,6 +23,7 @@ const routes: Routes = [
     ImageModule,
     TrackModule,
     ViewModule,
+    ListModule,
   ],
   declarations: [AlbumViewComponent],
 })

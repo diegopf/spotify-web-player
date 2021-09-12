@@ -1,74 +1,77 @@
-<spotify-web-player-detail-view>
-  <ng-container ngProjectAs="[headerTitle]">
-    <span aria-label="Go back to search" [routerLink]="['/search']"
-      >Go back to search</span
-    >
-    <h3>{{ artistName }}</h3>
-  </ng-container>
-  <ng-container ngProjectAs="[headerContent]">
-    <spotify-web-player-thumbnail
-      [width]="200"
-      [height]="200"
-      [image]="getArtistImage()"
-      [ariaLabel]="artistName"
-    ></spotify-web-player-thumbnail>
-  </ng-container>
-  <ng-container ngProjectAs="[headerFooter]">
-    <spotify-web-player-chip
-      *ngFor="let genre of genres"
-      [label]="genre"
-      [ariaLabel]="'genre'"
-    ></spotify-web-player-chip>
-
-    <spotify-web-player-chip
-      [ariaLabel]="'followers'"
-      [label]="followers"
-    ></spotify-web-player-chip>
-  </ng-container>
-  <h3>Top tracks</h3>
-  <spotify-web-player-grid-list>
-    <ng-container ngProjectAs="[content]">
-      <a *ngFor="let track of artistTopTracks">
-        <span>{{ track.name }}</span>
-        <spotify-web-player-track
-          [track]="track.preview_url"
-        ></spotify-web-player-track>
-      </a>
-    </ng-container>
-  </spotify-web-player-grid-list>
-
-  <h3>Albums</h3>
-  <spotify-web-player-grid-list>
-    <ng-container ngProjectAs="[content]">
-      <spotify-web-player-card
-        *ngFor="let album of artistAlbums"
-        [route]="'/album'"
-        [routeArg]="album.id"
-        [mainLabel]="album.name"
+<ng-container *ngIf="artist">
+  <spotify-web-player-detail-view>
+    <ng-container ngProjectAs="[headerTitle]">
+      <a aria-label="Go back to search" [routerLink]="['/search']"
+        >Go back to search</a
       >
-        <spotify-web-player-thumbnail
-          [image]="album.images[0]?.url"
-          [ariaLabel]="album.name"
-        ></spotify-web-player-thumbnail>
-      </spotify-web-player-card>
+      <h3>{{ artistName }}</h3>
     </ng-container>
-  </spotify-web-player-grid-list>
-  <h3>Related artists</h3>
-  <spotify-web-player-grid-list>
-    <ng-container ngProjectAs="[content]">
-      <spotify-web-player-card
-        *ngFor="let artist of relatedArtistsCollection"
-        [route]="'/artist'"
-        [routeArg]="artist.id"
-        [mainLabel]="artist.name"
-        [secondaryLabel]="'Artist'"
-      >
-        <span class="smaller">Artist</span>
-        <spotify-web-player-thumbnail
-          [image]="artist.images[0]?.url"
-          [ariaLabel]="artist.name"
-        ></spotify-web-player-thumbnail>
-      </spotify-web-player-card>
+    <ng-container ngProjectAs="[headerContent]">
+      <spotify-web-player-thumbnail
+        [width]="200"
+        [height]="200"
+        [image]="getArtistImage()"
+        [ariaLabel]="artistName"
+      ></spotify-web-player-thumbnail>
     </ng-container>
-  </spotify-web-player-grid-list>
-</spotify-web-player-detail-view>
+
+    <ng-container ngProjectAs="[headerFooter]">
+      <spotify-web-player-chip
+        *ngFor="let genre of genres"
+        [label]="genre"
+        [ariaLabel]="'genre'"
+      ></spotify-web-player-chip>
+
+      <spotify-web-player-chip
+        [ariaLabel]="'followers'"
+        [label]="followers"
+      ></spotify-web-player-chip>
+    </ng-container>
+    <h3>Top tracks</h3>
+    <spotify-web-player-grid-list>
+      <ng-container ngProjectAs="[content]">
+        <a *ngFor="let track of artistTopTracks">
+          <span>{{ track.name }}</span>
+          <spotify-web-player-track
+            [track]="track.preview_url"
+          ></spotify-web-player-track>
+        </a>
+      </ng-container>
+    </spotify-web-player-grid-list>
+
+    <h3>Albums</h3>
+    <spotify-web-player-grid-list>
+      <ng-container ngProjectAs="[content]">
+        <spotify-web-player-card
+          *ngFor="let album of artistAlbums"
+          [route]="'/album'"
+          [routeArg]="album.id"
+          [mainLabel]="album.name"
+        >
+          <spotify-web-player-thumbnail
+            [image]="album.images[0]?.url"
+            [ariaLabel]="album.name"
+          ></spotify-web-player-thumbnail>
+        </spotify-web-player-card>
+      </ng-container>
+    </spotify-web-player-grid-list>
+    <ng-container *ngIf="relatedArtistsCollection.length > 0">
+      <h3>Related artists</h3>
+      <spotify-web-player-grid-list>
+        <ng-container ngProjectAs="[content]">
+          <spotify-web-player-card
+            *ngFor="let artist of relatedArtistsCollection"
+            [route]="'/artist'"
+            [routeArg]="artist.id"
+            [mainLabel]="artist.name"
+          >
+            <spotify-web-player-thumbnail
+              [image]="artist.images[0]?.url"
+              [ariaLabel]="artist.name"
+            ></spotify-web-player-thumbnail>
+          </spotify-web-player-card>
+        </ng-container>
+      </spotify-web-player-grid-list>
+    </ng-container>
+  </spotify-web-player-detail-view>
+</ng-container>

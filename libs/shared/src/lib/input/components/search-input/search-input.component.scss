@@ -5,7 +5,8 @@
     width: 300px;
     background: none;
     border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--secondaryColor);
+    color: var(--secondaryColor);
     font-size: 14px;
     outline: none;
     transition: 0.5s;

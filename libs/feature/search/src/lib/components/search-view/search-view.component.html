@@ -5,7 +5,7 @@
     ></spotify-web-player-search-input>
   </div>
   <div class="content">
-    <ng-container *ngIf="artists">
+    <ng-container *ngIf="artists && artists.items.length > 0">
       <h3>Artists</h3>
       <spotify-web-player-grid-list>
         <ng-container ngProjectAs="[content]">
@@ -14,17 +14,16 @@
             [route]="'/artist'"
             [routeArg]="artist.id"
             [mainLabel]="artist.name"
-            [secondaryLabel]="'Artist'"
           >
             <spotify-web-player-thumbnail
-              [image]="artist.images[0]?.url"
+              [image]="artist.images[1]?.url"
               [ariaLabel]="artist.name"
             ></spotify-web-player-thumbnail>
           </spotify-web-player-card>
         </ng-container>
       </spotify-web-player-grid-list>
     </ng-container>
-    <ng-container *ngIf="albums">
+    <ng-container *ngIf="albums && albums.items.length > 0">
       <h3>Albums</h3>
       <spotify-web-player-grid-list>
         <ng-container ngProjectAs="[content]">
@@ -36,10 +35,23 @@
             [secondaryLabel]="reduceArtists(album)"
           >
             <spotify-web-player-thumbnail
-              [image]="album.images[0]?.url"
+              [image]="album.images[1]?.url"
               [ariaLabel]="album.name"
             ></spotify-web-player-thumbnail>
           </spotify-web-player-card>
+        </ng-container>
+      </spotify-web-player-grid-list>
+    </ng-container>
+    <ng-container *ngIf="tracks && tracks.items.length > 0">
+      <h3>Tracks</h3>
+      <spotify-web-player-grid-list>
+        <ng-container ngProjectAs="[content]">
+          <spotify-web-player-track
+            *ngFor="let track of tracks.items"
+            [track]="track.preview_url"
+            [name]="track.name"
+          >
+          </spotify-web-player-track>
         </ng-container>
       </spotify-web-player-grid-list>
     </ng-container>
