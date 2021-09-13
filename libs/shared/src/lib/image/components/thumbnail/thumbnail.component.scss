@@ -6,6 +6,9 @@
     opacity: 0;
     transition: 1s;
   }
+  svg {
+    fill: var(--secondaryColor);
+  }
 
   &.loaded {
     img {
