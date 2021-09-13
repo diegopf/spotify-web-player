@@ -24,24 +24,12 @@ describe('spotify-web-player', () => {
   });
 
   it('Should set the dark theme', () => {
-    cy.get('spotify-web-player-search-view').should(
-      'have.css',
-      'background-color',
-      'rgb(222, 232, 243)'
-    );
-    getGreeting().should('have.css', 'color', 'rgb(49, 69, 106)');
+    cy.get('body').should('have.css', 'background-color', 'rgb(100, 179, 244)');
+    getGreeting().should('have.css', 'color', 'rgb(194, 229, 156)');
     getThemeSwitch().click();
-    cy.get('spotify-web-player-search-view').should(
-      'have.css',
-      'background-color',
-      'rgb(9, 14, 17)'
-    );
+    cy.get('body').should('have.css', 'background-color', 'rgb(9, 14, 17)');
     getGreeting().should('have.css', 'color', 'rgb(27, 97, 98)');
     getThemeSwitch().click();
-    cy.get('spotify-web-player-search-view').should(
-      'have.css',
-      'background-color',
-      'rgb(222, 232, 243)'
-    );
+    cy.get('body').should('have.css', 'background-color', 'rgb(100, 179, 244)');
   });
 });

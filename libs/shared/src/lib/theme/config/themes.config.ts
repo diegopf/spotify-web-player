@@ -5,8 +5,8 @@ export interface ApplicationTheme {
 }
 export const THEMES: { [key: string]: ApplicationTheme } = {
   light: {
-    primaryColor: 'rgb(222, 232, 243)',
-    secondaryColor: 'rgb(49, 69, 106)',
+    primaryColor: 'rgb(100, 179, 244)',
+    secondaryColor: 'rgb(194, 229, 156)',
   },
   dark: {
     primaryColor: 'rgb(9, 14, 17)',
