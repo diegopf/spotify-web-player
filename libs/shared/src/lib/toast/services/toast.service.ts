@@ -6,6 +6,10 @@ import { Injectable } from '@angular/core';
 export class ToastService {
   private id = 'spotify-web-player-toast';
 
+  /**
+   *
+   * @param message {string} error message to show to the user
+   */
   showError(message: string) {
     let toast = document.getElementById(this.id);
     if (toast) {
