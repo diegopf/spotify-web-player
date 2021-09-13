@@ -13,6 +13,8 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   albums: SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified> | undefined;
   tracks: SpotifyApi.PagingObject<SpotifyApi.TrackObjectFull> | undefined;
   emptyResults = false;
+  query: string | undefined;
+
   private subscription = new Subscription();
   constructor(
     private spotifyApiService: SpotifyApiService,
@@ -22,9 +24,10 @@ export class SearchViewComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription.add(
-      this.route.queryParams.subscribe(({ searchKeywords }) => {
-        if (searchKeywords) {
-          this.spotifyApiService.search(searchKeywords).subscribe((data) => {
+      this.route.queryParams.subscribe(({ q }) => {
+        if (q) {
+          this.query = q;
+          this.spotifyApiService.search(q).subscribe((data) => {
             this.artists = data.artists;
             this.albums = data.albums;
             this.tracks = data.tracks;
@@ -42,9 +45,9 @@ export class SearchViewComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  search(searchKeywords: string) {
+  search(q: string) {
     this.router.navigate(['search'], {
-      queryParams: { searchKeywords },
+      queryParams: { q },
       queryParamsHandling: 'merge',
     });
   }

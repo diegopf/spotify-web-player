@@ -9,7 +9,10 @@
     "build": "ts-node config-prod-env.ts && nx build",
     "test": "nx run-many --all --target=test --code-coverage=true",
     "test:auth": "nx test feature-auth --code-coverage=true",
-    "test:ci": "npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI"
+    "test:ci": "npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI",
+    "test:e2e": "nx run spotify-web-player-e2e:e2e",
+    "test:e2e:ci": "nx run spotify-web-player-e2e:e2e --headless",
+    "test:e2e:watch": "nx run spotify-web-player-e2e:e2e --watch"
   },
   "private": true,
   "dependencies": {

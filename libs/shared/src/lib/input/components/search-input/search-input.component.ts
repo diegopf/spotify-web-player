@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
+  Input,
   OnDestroy,
   OnInit,
   Output,
@@ -20,10 +21,17 @@ export class SearchInputComponent implements OnInit, OnDestroy {
   searchText = new FormControl('');
   @Output()
   searchFor = new EventEmitter<string>();
+  @Input()
+  query: string | undefined;
 
   private subscription = new Subscription();
 
   ngOnInit(): void {
+    if (this.query) {
+      this.searchText.patchValue(this.query, {
+        emitEvent: false,
+      });
+    }
     this.subscription.add(
       this.searchText.valueChanges
         .pipe(debounceTime(200))

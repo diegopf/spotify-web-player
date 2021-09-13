@@ -4,7 +4,7 @@
       <a aria-label="Go back to search" [routerLink]="['/search']"
         >Go back to search</a
       >
-      <h3>{{ artistName }}</h3>
+      <h3 data-cy="artist-name">{{ artistName }}</h3>
     </ng-container>
     <ng-container ngProjectAs="[headerContent]">
       <spotify-web-player-thumbnail

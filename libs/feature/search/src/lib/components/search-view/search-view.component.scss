@@ -15,8 +15,9 @@
     'toolbar'
     'content';
   overflow: hidden;
-  h3,
-  h2 {
+  h1,
+  h2,
+  h3 {
     color: var(--secondaryColor);
   }
 }
@@ -33,6 +34,16 @@
 
   .empty {
     margin: 0 auto;
+  }
+
+  .start {
+    margin: 0 auto;
+    top: 50%;
+    bottom: 50%;
+    position: relative;
+    h1 {
+      text-align: center;
+    }
   }
 }
 @media (max-width: 500px) {
