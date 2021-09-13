@@ -10,6 +10,11 @@ a {
   flex-direction: column;
   justify-content: center;
   height: 300px;
+  background-image: linear-gradient(
+    to top,
+    var(--secondaryColor) 0%,
+    var(--primaryColor) 100%
+  );
   &:hover,
   &:focus {
     transform: scale(1.1);
