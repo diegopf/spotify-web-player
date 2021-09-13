@@ -14,12 +14,12 @@ export class ToastService {
     let toast = document.getElementById(this.id);
     if (toast) {
       toast.innerHTML = message;
+    } else {
+      toast = document.createElement('div');
+      toast.setAttribute('id', this.id);
+      toast.innerHTML = message;
+      document.body.appendChild(toast);
     }
-
-    toast = document.createElement('div');
-    toast.setAttribute('id', this.id);
-    toast.innerHTML = message;
-    document.body.appendChild(toast);
 
     setTimeout(() => {
       const toast = document.getElementById(this.id);
