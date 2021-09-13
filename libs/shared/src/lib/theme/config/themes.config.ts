@@ -5,11 +5,11 @@ export interface ApplicationTheme {
 }
 export const THEMES: { [key: string]: ApplicationTheme } = {
   light: {
-    primaryColor: '#dee8f3',
-    secondaryColor: '#31456a',
+    primaryColor: 'rgb(222, 232, 243)',
+    secondaryColor: 'rgb(49, 69, 106)',
   },
   dark: {
-    primaryColor: '#090e11',
-    secondaryColor: '#1b6162',
+    primaryColor: 'rgb(9, 14, 17)',
+    secondaryColor: 'rgb(27, 97, 98)',
   },
 };

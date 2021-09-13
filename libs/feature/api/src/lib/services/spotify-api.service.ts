@@ -12,18 +12,18 @@ export class SpotifyApiService {
 
   /**
    *
-   * @param searchText {string} the text to search for
+   * @param query {string} the text to search for
    * @param type {string} scope for the search
    * @returns {Observable<SpotifyApi.SearchResponse>} r
    *  retuns an observable which will resolve with the results that matches the query
    */
   search(
-    searchText: string,
+    query: string,
     type: string = 'artist,album,track'
   ): Observable<SpotifyApi.SearchResponse> {
     return this.http
       .get<SpotifyApi.SearchResponse>(
-        `${this.baseApiUrl}/search?q=${searchText}&type=${type}`
+        `${this.baseApiUrl}/search?q=${query}&type=${type}`
       )
       .pipe(take(1));
   }

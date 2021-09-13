@@ -2,6 +2,7 @@
   <div class="toolbar">
     <spotify-web-player-search-input
       (searchFor)="search($event)"
+      [query]="query"
     ></spotify-web-player-search-input>
   </div>
   <div class="content">
@@ -58,6 +59,11 @@
     <ng-container *ngIf="emptyResults">
       <div class="empty">
         <h2>Nothing found!</h2>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!emptyResults && !artists && !albums && !tracks">
+      <div class="start">
+        <h1>Search for your favorite music!</h1>
       </div>
     </ng-container>
   </div>
