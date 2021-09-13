@@ -1,12 +1,12 @@
+@import '../../../theme/theme.scss';
+
 a {
-  text-decoration: none;
+  @include links;
+  @include centerFlex;
   text-align: center;
   transition: 0.2s;
   border: 3px solid var(--secondaryColor);
   border-radius: 8px;
-  display: flex;
-  align-content: center;
-  align-items: center;
   flex-direction: column;
   justify-content: center;
   height: 300px;
@@ -21,7 +21,6 @@ a {
   }
 
   span {
-    color: var(--secondaryColor);
     &.smaller {
       font-size: smaller;
     }

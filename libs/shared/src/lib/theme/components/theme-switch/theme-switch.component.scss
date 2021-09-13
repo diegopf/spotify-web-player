@@ -1,6 +1,7 @@
+@import '../../theme.scss';
+
 :host {
-  display: flex;
-  align-items: center;
+  @include centerFlex;
 
   .icon {
     margin: 2px;
