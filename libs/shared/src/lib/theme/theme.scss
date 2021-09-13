@@ -25,3 +25,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+@mixin title {
+  font-size: xx-large;
+}
