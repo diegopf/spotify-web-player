@@ -54,7 +54,7 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
   }
 
   get genres() {
-    return this.artist?.genres ?? [];
+    return this.artist?.genres.slice(0, 4) ?? [];
   }
 
   get followers() {
