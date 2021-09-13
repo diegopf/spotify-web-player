@@ -41,4 +41,8 @@ export class AlbumViewComponent implements OnInit, OnDestroy {
   get tracks() {
     return this.album?.tracks.items ?? [];
   }
+
+  get spotifyUri() {
+    return `https://open.spotify.com/album/${this.album.id}`;
+  }
 }

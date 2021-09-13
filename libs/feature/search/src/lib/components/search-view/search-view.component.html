@@ -51,6 +51,7 @@
             *ngFor="let track of tracks.items"
             [track]="track.preview_url"
             [name]="track.name"
+            [uri]="track.id"
           >
           </spotify-web-player-track>
         </ng-container>

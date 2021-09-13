@@ -72,4 +72,8 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
   get artistTopTracks() {
     return this.topTracks?.tracks;
   }
+
+  get spotifyUri() {
+    return `https://open.spotify.com/artist/${this.artist.id}`;
+  }
 }
