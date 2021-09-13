@@ -47,6 +47,9 @@
   }
 }
 @media (max-width: 500px) {
+  .container {
+    grid-template-rows: 0.2fr 2fr;
+  }
   .toolbar {
     justify-content: start;
   }
