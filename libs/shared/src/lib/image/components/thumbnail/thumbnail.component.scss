@@ -3,5 +3,13 @@
 
   img {
     border-radius: 50%;
+    opacity: 0;
+    transition: 1s;
+  }
+
+  &.loaded {
+    img {
+      opacity: 1;
+    }
   }
 }

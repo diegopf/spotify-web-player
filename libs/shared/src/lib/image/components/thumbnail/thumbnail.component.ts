@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'spotify-web-player-thumbnail',
@@ -15,4 +20,9 @@ export class ThumbnailComponent {
   height = 200;
   @Input()
   ariaLabel = '';
+
+  loaded() {
+    this.el.nativeElement.classList.add('loaded');
+  }
+  constructor(private el: ElementRef) {}
 }
