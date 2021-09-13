@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ThemeService } from '../../services';
 
 @Component({
@@ -7,12 +7,20 @@ import { ThemeService } from '../../services';
   styleUrls: ['./theme-switch.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ThemeSwitchComponent {
+export class ThemeSwitchComponent implements OnInit {
   darkThemeEnabled = false;
   constructor(private themeService: ThemeService) {}
 
+  ngOnInit() {
+    const darkThemeEnabled = localStorage.getItem('darkThemeEnabled');
+    if (darkThemeEnabled === 'true') {
+      this.switchTheme();
+    }
+  }
+
   switchTheme() {
     this.darkThemeEnabled = !this.darkThemeEnabled;
+    localStorage.setItem('darkThemeEnabled', `${this.darkThemeEnabled}`);
     this.themeService.toggleTheme();
   }
 }
