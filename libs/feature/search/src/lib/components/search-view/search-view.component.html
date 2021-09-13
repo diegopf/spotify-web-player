@@ -5,7 +5,9 @@
       [query]="query"
     ></spotify-web-player-search-input>
   </div>
+
   <div class="content">
+    <!-- Artists -->
     <ng-container *ngIf="artists && artists.items.length > 0">
       <h3>Artists</h3>
       <spotify-web-player-grid-list>
@@ -24,6 +26,8 @@
         </ng-container>
       </spotify-web-player-grid-list>
     </ng-container>
+
+    <!-- Albums -->
     <ng-container *ngIf="albums && albums.items.length > 0">
       <h3>Albums</h3>
       <spotify-web-player-grid-list>
@@ -43,6 +47,8 @@
         </ng-container>
       </spotify-web-player-grid-list>
     </ng-container>
+
+    <!-- Tracks -->
     <ng-container *ngIf="tracks && tracks.items.length > 0">
       <h3>Tracks</h3>
       <spotify-web-player-grid-list>
@@ -57,11 +63,15 @@
         </ng-container>
       </spotify-web-player-grid-list>
     </ng-container>
+
+    <!-- Not found -->
     <ng-container *ngIf="emptyResults">
       <div class="empty">
-        <h2>Nothing found!</h2>
+        <h1>No luck, try again! 😞</h1>
       </div>
     </ng-container>
+
+    <!-- Start -->
     <ng-container *ngIf="!emptyResults && !artists && !albums && !tracks">
       <div class="start">
         <h1>Search for your favorite music!</h1>
