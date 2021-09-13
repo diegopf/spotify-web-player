@@ -1,4 +1,19 @@
-<h4>{{ name }}</h4>
+<div class="container--center">
+  <button
+    class="button--clipboard"
+    title="copy link to clipboard"
+    (click)="copyToClipboard()"
+  >
+    📋
+  </button>
+  <a
+    class="ellipsis"
+    title="open on spotify"
+    target="blank"
+    [href]="spotifyLink"
+    >{{ name }}</a
+  >
+</div>
 <audio controls>
   <source [src]="track" type="audio/mpeg" />
   Your browser does not support the audio element.

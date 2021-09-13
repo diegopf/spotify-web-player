@@ -11,4 +11,14 @@ export class TrackComponent {
   track!: string | null;
   @Input()
   name!: string;
+  @Input()
+  uri!: string;
+
+  get spotifyLink() {
+    return `https://open.spotify.com/track/${this.uri}`;
+  }
+
+  copyToClipboard() {
+    navigator.clipboard.writeText(this.spotifyLink);
+  }
 }
