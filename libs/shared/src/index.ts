@@ -6,5 +6,6 @@ export * from './lib/list/list.module';
 export * from './lib/shared.module';
 export * from './lib/theme/services';
 export * from './lib/theme/theme.module';
+export * from './lib/toast/services';
 export * from './lib/track/track.module';
 export * from './lib/view/view.module';

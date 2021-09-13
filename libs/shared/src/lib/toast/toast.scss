@@ -1,0 +1,15 @@
+#spotify-web-player-toast {
+    visibility: visible;
+    width: 250px;
+    background-color: rgb(146, 28, 28);
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+    padding: 16px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    margin: 0 auto;
+}
