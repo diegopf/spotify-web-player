@@ -14,7 +14,6 @@ export class ThemeService {
     const themeName = this.currentTheme === 'light' ? 'dark' : 'light';
     const theme = THEMES[themeName];
     for (const key of Object.keys(theme)) {
-      console.log(key, theme[key]);
       this.document.documentElement.style.setProperty(`--${key}`, theme[key]);
     }
     this.currentTheme = themeName;
