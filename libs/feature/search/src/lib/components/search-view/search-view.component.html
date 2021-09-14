@@ -21,6 +21,7 @@
             <spotify-web-player-thumbnail
               [image]="artist.images[1]?.url"
               [ariaLabel]="artist.name"
+              [title]="artist.name"
             ></spotify-web-player-thumbnail>
           </spotify-web-player-card>
         </ng-container>
@@ -42,6 +43,7 @@
             <spotify-web-player-thumbnail
               [image]="album.images[1]?.url"
               [ariaLabel]="album.name"
+              [title]="album.name"
             ></spotify-web-player-thumbnail>
           </spotify-web-player-card>
         </ng-container>

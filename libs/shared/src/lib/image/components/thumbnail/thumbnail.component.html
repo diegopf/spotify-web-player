@@ -1,11 +1,12 @@
 <img
   *ngIf="image; else noImage"
   [src]="image"
-  alt="ariaLabel"
+  [alt]="ariaLabel"
   [attr.loading]="'lazy'"
   [style.width]="width + 'px'"
   [style.height]="height + 'px'"
   (load)="loaded()"
+  [title]="title"
 />
 <ng-template #noImage>
   <svg

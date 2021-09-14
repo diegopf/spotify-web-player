@@ -20,6 +20,8 @@ export class ThumbnailComponent {
   height = 200;
   @Input()
   ariaLabel = '';
+  @Input()
+  title = '';
 
   loaded() {
     this.el.nativeElement.classList.add('loaded');

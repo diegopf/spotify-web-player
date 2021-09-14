@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class AlbumViewComponent implements OnInit, OnDestroy {
   album!: SpotifyApi.SingleAlbumResponse;
+
   private subscription = new Subscription();
   constructor(
     private spotifyApiService: SpotifyApiService,

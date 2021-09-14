@@ -1,5 +1,6 @@
 <ng-container *ngIf="album">
   <spotify-web-player-detail-view>
+    <!-- Header -->
     <ng-container ngProjectAs="[headerTitle]">
       <a aria-label="Go back to search" [routerLink]="['/search']">
         Go back to search
@@ -19,8 +20,11 @@
         [height]="200"
         [image]="albumCover"
         [ariaLabel]="albumName"
+        [title]="albumName"
       ></spotify-web-player-thumbnail>
     </ng-container>
+
+    <!-- Main content -->
     <spotify-web-player-grid-list>
       <ng-container ngProjectAs="[content]">
         <spotify-web-player-track

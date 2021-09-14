@@ -15,6 +15,7 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
   topTracks!: SpotifyApi.ArtistsTopTracksResponse;
 
   private subscription = new Subscription();
+
   constructor(
     private spotifyApiService: SpotifyApiService,
     private route: ActivatedRoute
@@ -26,14 +27,17 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
         this.spotifyApiService
           .getArtist(id)
           .subscribe((artist) => (this.artist = artist));
+
         this.spotifyApiService
           .getArtistAlbums(id)
           .subscribe((albums) => (this.albums = albums));
+
         this.spotifyApiService
           .getArtistRelatedArtists(id)
           .subscribe(
             (relatedArtists) => (this.relatedArtists = relatedArtists)
           );
+
         this.spotifyApiService
           .getArtistTopTracks(id)
           .subscribe((topTracks) => (this.topTracks = topTracks));
