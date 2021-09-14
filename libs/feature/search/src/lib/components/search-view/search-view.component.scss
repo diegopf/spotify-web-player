@@ -31,3 +31,8 @@
     }
   }
 }
+@media (max-width: 500px) {
+  .container {
+    grid-template-rows: 100px 1fr;
+  }
+}
