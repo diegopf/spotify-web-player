@@ -1,29 +1,7 @@
-:host {
+.cards {
+  margin-top: 10px;
+  max-width: 100%;
   display: grid;
-  margin-top: 15px;
-
-  .cards {
-    margin-top: 10px;
-    max-width: 100%;
-    display: grid;
-    grid-gap: 1rem;
-  }
-
-  @media (min-width: 400px) {
-    .cards {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 600px) {
-    .cards {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media (min-width: 900px) {
-    .cards {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
