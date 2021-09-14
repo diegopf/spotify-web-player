@@ -54,7 +54,7 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
   }
 
   get genres() {
-    return this.artist?.genres ?? [];
+    return this.artist?.genres.slice(0, 4) ?? [];
   }
 
   get followers() {
@@ -71,5 +71,9 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
 
   get artistTopTracks() {
     return this.topTracks?.tracks;
+  }
+
+  get spotifyUri() {
+    return `https://open.spotify.com/artist/${this.artist.id}`;
   }
 }

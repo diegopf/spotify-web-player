@@ -1,7 +1,27 @@
+@import '../../../theme/theme.scss';
+
 h4 {
   color: var(--secondaryColor);
 }
 
 audio {
-  max-width: 300px;
+  max-width: 250px;
+}
+
+a {
+  @include links;
+}
+
+.button--clipboard {
+  @include clipboardButton;
+}
+
+.container--center {
+  @include centerFlex;
+  margin: 10px;
+}
+
+.ellipsis {
+  @include ellipsis;
+  max-width: 200px;
 }

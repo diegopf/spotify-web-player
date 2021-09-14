@@ -1,10 +1,18 @@
 <ng-container *ngIf="artist">
   <spotify-web-player-detail-view>
     <ng-container ngProjectAs="[headerTitle]">
-      <a aria-label="Go back to search" [routerLink]="['/search']"
-        >Go back to search</a
+      <a aria-label="Go back to search" [routerLink]="['/search']">
+        Go back to search
+      </a>
+      <a
+        class="title"
+        title="open on spotify"
+        [href]="spotifyUri"
+        target="blank"
+        data-cy="artist-name"
       >
-      <h3 data-cy="artist-name">{{ artistName }}</h3>
+        {{ artistName }}
+      </a>
     </ng-container>
     <ng-container ngProjectAs="[headerContent]">
       <spotify-web-player-thumbnail
@@ -31,9 +39,10 @@
     <spotify-web-player-grid-list>
       <ng-container ngProjectAs="[content]">
         <a *ngFor="let track of artistTopTracks">
-          <span>{{ track.name }}</span>
           <spotify-web-player-track
             [track]="track.preview_url"
+            [name]="track.name"
+            [uri]="track.id"
           ></spotify-web-player-track>
         </a>
       </ng-container>

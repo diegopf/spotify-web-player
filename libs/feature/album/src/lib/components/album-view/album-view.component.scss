@@ -1,9 +1,13 @@
+@import '../../../../../../shared/src/lib/theme/theme.scss';
+
 span,
-h3,
-a {
+h3 {
   color: var(--secondaryColor);
 }
 
 a {
-  text-decoration: none;
+  @include links;
+  &.title {
+    @include title;
+  }
 }
