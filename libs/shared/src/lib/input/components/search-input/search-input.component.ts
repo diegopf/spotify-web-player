@@ -18,12 +18,16 @@ import { debounceTime } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchInputComponent implements OnInit, OnDestroy {
-  searchText = new FormControl('');
   @Output()
   searchFor = new EventEmitter<string>();
+
   @Input()
   query: string | undefined;
 
+  @Input()
+  placeholder = 'Search here!';
+
+  searchText = new FormControl('');
   private subscription = new Subscription();
 
   ngOnInit(): void {

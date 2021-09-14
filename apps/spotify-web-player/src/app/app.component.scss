@@ -6,4 +6,9 @@
     top: 5px;
     right: 20px;
   }
+  @media (max-width: 500px) {
+    spotify-web-player-theme-switch {
+      right: 10px;
+    }
+  }
 }

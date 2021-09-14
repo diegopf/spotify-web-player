@@ -1,5 +1,6 @@
 <ng-container *ngIf="artist">
   <spotify-web-player-detail-view>
+    <!-- Header -->
     <ng-container ngProjectAs="[headerTitle]">
       <a aria-label="Go back to search" [routerLink]="['/search']">
         Go back to search
@@ -20,6 +21,7 @@
         [height]="200"
         [image]="getArtistImage()"
         [ariaLabel]="artistName"
+        [title]="artistName"
       ></spotify-web-player-thumbnail>
     </ng-container>
 
@@ -35,7 +37,10 @@
         [label]="followers"
       ></spotify-web-player-chip>
     </ng-container>
+
+    <!-- Content -->
     <h3>Top tracks</h3>
+
     <spotify-web-player-grid-list>
       <ng-container ngProjectAs="[content]">
         <a *ngFor="let track of artistTopTracks">
@@ -49,6 +54,7 @@
     </spotify-web-player-grid-list>
 
     <h3>Albums</h3>
+
     <spotify-web-player-grid-list>
       <ng-container ngProjectAs="[content]">
         <spotify-web-player-card
@@ -64,6 +70,7 @@
         </spotify-web-player-card>
       </ng-container>
     </spotify-web-player-grid-list>
+
     <ng-container *ngIf="relatedArtistsCollection.length > 0">
       <h3>Related artists</h3>
       <spotify-web-player-grid-list>
