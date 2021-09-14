@@ -42,6 +42,11 @@
         text-align: center;
         font-weight: 100;
       }
+      .heading--nope {
+        animation: nope 7s infinite;
+        position: absolute;
+        left: 50%;
+      }
     }
   }
 }
