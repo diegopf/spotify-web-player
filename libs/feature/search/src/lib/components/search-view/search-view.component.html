@@ -69,14 +69,21 @@
     <!-- Not found -->
     <ng-container *ngIf="emptyResults">
       <div class="empty">
-        <h1>No luck, try again! 😞</h1>
+        <div class="heading--main">
+          <h1>No luck, try again! 😞</h1>
+        </div>
       </div>
     </ng-container>
 
     <!-- Start -->
     <ng-container *ngIf="!emptyResults && !artists && !albums && !tracks">
       <div class="start">
-        <h1>Search for your favorite music!</h1>
+        <div class="heading--main">
+          <h1>Search for</h1>
+        </div>
+        <div class="heading--sub">
+          <h2>artists albums or tracks</h2>
+        </div>
       </div>
     </ng-container>
   </div>
