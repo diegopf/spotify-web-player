@@ -100,3 +100,14 @@
   }
 }
 
+::-webkit-scrollbar {
+  height: 16px;
+  width: 16px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 16px;
+  background-clip: padding-box;
+  background-color: var(--secondaryColor);
+}
