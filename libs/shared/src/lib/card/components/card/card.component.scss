@@ -23,6 +23,8 @@ a {
   span {
     &.smaller {
       font-size: smaller;
+      @include ellipsis;
+      max-width: 250px;
     }
   }
 }
