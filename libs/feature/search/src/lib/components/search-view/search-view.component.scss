@@ -1,18 +1,8 @@
-:host {
-  display: grid;
-  height: 100%;
-}
+@import '../../../../../../shared/src/lib/theme/theme.scss';
 
 .container {
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr 2fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    'toolbar'
-    'content';
+  grid-template-rows: 60px 1fr;
   overflow: hidden;
   h1,
   h2,
@@ -20,14 +10,12 @@
     color: var(--secondaryColor);
   }
 }
+
 .toolbar {
-  grid-area: toolbar;
-  display: grid;
-  align-content: center;
-  justify-content: center;
+  @include centerFlex;
 }
+
 .content {
-  grid-area: content;
   overflow: auto;
   padding: 10px;
 
@@ -43,9 +31,6 @@
   }
 }
 @media (max-width: 500px) {
-  .container {
-    grid-template-rows: 0.2fr 2fr;
-  }
   .toolbar {
     justify-content: start;
   }
