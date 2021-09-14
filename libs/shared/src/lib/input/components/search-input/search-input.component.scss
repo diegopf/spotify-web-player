@@ -16,6 +16,12 @@
       width: 350px;
       border-radius: 10px;
     }
+
+    &::placeholder {
+      opacity: 0.75;
+      color: white;
+      font-size: small;
+    }
   }
 
   @media (max-width: 450px) {

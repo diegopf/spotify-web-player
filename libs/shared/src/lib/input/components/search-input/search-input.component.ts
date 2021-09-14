@@ -38,7 +38,7 @@ export class SearchInputComponent implements OnInit, OnDestroy {
     }
     this.subscription.add(
       this.searchText.valueChanges
-        .pipe(debounceTime(200))
+        .pipe(debounceTime(300))
         .subscribe((value: string) => {
           this.searchFor.emit(value);
         })
