@@ -36,6 +36,8 @@ export class SearchViewComponent implements OnInit, OnDestroy {
               data.albums?.items.length === 0 &&
               data.tracks?.items.length === 0;
           });
+        } else {
+          this.router.navigate(['/search']);
         }
       })
     );
