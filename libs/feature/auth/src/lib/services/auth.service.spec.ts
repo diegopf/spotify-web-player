@@ -14,7 +14,7 @@ describe('AuthService', () => {
       imports: [HttpClientTestingModule],
     });
 
-    httpTestingController = TestBed.get(HttpTestingController);
+    httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(AuthService);
   });
 
