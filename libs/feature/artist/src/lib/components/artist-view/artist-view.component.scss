@@ -1,7 +1,8 @@
 @import '../../../../../../shared/src/lib/theme/theme.scss';
 
 span,
-h3 {
+h3,
+h1 {
   color: var(--secondaryColor);
 }
 
@@ -11,4 +12,9 @@ a {
   &.title {
     @include title;
   }
+}
+
+.container {
+  @include columnCenterFlex;
+  margin: 10px;
 }
