@@ -29,6 +29,10 @@ const routes: Routes = [
         loadChildren: () =>
           import('@spotify-web-player/album').then((m) => m.FeatureAlbumModule),
       },
+      {
+        path: '**',
+        redirectTo: 'search',
+      },
     ],
   },
 ];
