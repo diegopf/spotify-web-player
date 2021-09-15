@@ -1,8 +1,7 @@
 @import '../../../theme/theme.scss';
 
 :host {
-  @include centerFlex;
-  flex-direction: column;
+  @include columnCenterFlex;
 }
 
 h4 {

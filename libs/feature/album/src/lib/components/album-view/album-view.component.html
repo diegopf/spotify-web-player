@@ -1,4 +1,4 @@
-<ng-container *ngIf="album">
+<ng-container *ngIf="album; else noAlbum">
   <spotify-web-player-detail-view>
     <!-- Header -->
     <ng-container ngProjectAs="[headerTitle]">
@@ -37,3 +37,11 @@
     </spotify-web-player-grid-list>
   </spotify-web-player-detail-view>
 </ng-container>
+<ng-template #noAlbum>
+  <div class="container">
+    <a aria-label="Go back to search" [routerLink]="['/search']">
+      Go back to search
+    </a>
+    <h1>Sorry, we can't find this album</h1>
+  </div>
+</ng-template>

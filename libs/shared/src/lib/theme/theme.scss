@@ -21,6 +21,11 @@
   justify-content: center;
 }
 
+@mixin columnCenterFlex {
+  @include centerFlex;
+  flex-direction: column;
+}
+
 @mixin ellipsis {
   overflow: hidden;
   white-space: nowrap;

@@ -1,4 +1,4 @@
-<ng-container *ngIf="artist">
+<ng-container *ngIf="artist; else noArtist">
   <spotify-web-player-detail-view>
     <!-- Header -->
     <ng-container ngProjectAs="[headerTitle]">
@@ -91,3 +91,11 @@
     </ng-container>
   </spotify-web-player-detail-view>
 </ng-container>
+<ng-template #noArtist>
+  <div class="container">
+    <a aria-label="Go back to search" [routerLink]="['/search']">
+      Go back to search
+    </a>
+    <h1>Sorry, we can't find this artist</h1>
+  </div>
+</ng-template>
