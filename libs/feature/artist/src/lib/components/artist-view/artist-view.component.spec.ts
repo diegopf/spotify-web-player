@@ -2,9 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SpotifyApiService } from '@spotify-web-player/api';
 import {
+  CardModule,
   ChipModule,
   ImageModule,
   ListModule,
+  TrackModule,
   ViewModule,
 } from '@spotify-web-player/shared';
 import { ArtistViewComponent } from './artist-view.component';
@@ -17,9 +19,11 @@ describe('ArtistViewComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        ListModule,
         ImageModule,
         ChipModule,
+        ListModule,
+        CardModule,
+        TrackModule,
         ViewModule,
       ],
       declarations: [ArtistViewComponent],
