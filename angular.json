@@ -9,7 +9,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature/album"],
+          "outputs": [
+            "coverage/libs/feature/album"
+          ],
           "options": {
             "jestConfig": "libs/feature/album/jest.config.js",
             "passWithNoTests": true
@@ -24,7 +26,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     },
     "feature-api": {
       "projectType": "library",
@@ -34,7 +37,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature/api"],
+          "outputs": [
+            "coverage/libs/feature/api"
+          ],
           "options": {
             "jestConfig": "libs/feature/api/jest.config.js",
             "passWithNoTests": true
@@ -49,7 +54,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     },
     "feature-artist": {
       "projectType": "library",
@@ -59,7 +65,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature/artist"],
+          "outputs": [
+            "coverage/libs/feature/artist"
+          ],
           "options": {
             "jestConfig": "libs/feature/artist/jest.config.js",
             "passWithNoTests": true
@@ -74,7 +82,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     },
     "feature-auth": {
       "projectType": "library",
@@ -84,7 +93,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature/auth"],
+          "outputs": [
+            "coverage/libs/feature/auth"
+          ],
           "options": {
             "jestConfig": "libs/feature/auth/jest.config.js",
             "passWithNoTests": true
@@ -99,7 +110,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     },
     "feature-search": {
       "projectType": "library",
@@ -109,7 +121,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature/search"],
+          "outputs": [
+            "coverage/libs/feature/search"
+          ],
           "options": {
             "jestConfig": "libs/feature/search/jest.config.js",
             "passWithNoTests": true
@@ -124,7 +138,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     },
     "shared": {
       "projectType": "library",
@@ -134,7 +149,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared"],
+          "outputs": [
+            "coverage/libs/shared"
+          ],
           "options": {
             "jestConfig": "libs/shared/jest.config.js",
             "passWithNoTests": true
@@ -149,7 +166,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     },
     "spotify-web-player": {
       "projectType": "application",
@@ -159,7 +177,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/spotify-web-player",
             "index": "apps/spotify-web-player/src/index.html",
@@ -172,7 +192,9 @@
               "apps/spotify-web-player/src/assets",
               "apps/spotify-web-player/src/manifest.webmanifest"
             ],
-            "styles": ["apps/spotify-web-player/src/styles.scss"],
+            "styles": [
+              "apps/spotify-web-player/src/styles.scss"
+            ],
             "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "apps/spotify-web-player/ngsw-config.json"
@@ -245,13 +267,16 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/spotify-web-player"],
+          "outputs": [
+            "coverage/apps/spotify-web-player"
+          ],
           "options": {
             "jestConfig": "apps/spotify-web-player/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "spotify-web-player-e2e": {
       "root": "apps/spotify-web-player-e2e",
@@ -273,44 +298,20 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/spotify-web-player-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/spotify-web-player-e2e/**/*.{js,ts}"
+            ]
           }
         }
-      }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
-  },
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
       },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
+      "tags": [],
+      "implicitDependencies": [
+        "spotify-web-player"
+      ]
     }
-  },
-  "defaultProject": "spotify-web-player"
+  }
 }

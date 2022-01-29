@@ -14,7 +14,8 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "parallel": 1
       }
     }
   },
@@ -26,31 +27,35 @@
       }
     ]
   },
-  "projects": {
-    "feature-album": {
-      "tags": []
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
+  },
+  "defaultProject": "spotify-web-player",
+  "generators": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
     },
-    "feature-api": {
-      "tags": []
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
     },
-    "feature-artist": {
-      "tags": []
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
     },
-    "feature-auth": {
-      "tags": []
-    },
-    "feature-search": {
-      "tags": []
-    },
-    "shared": {
-      "tags": []
-    },
-    "spotify-web-player": {
-      "tags": []
-    },
-    "spotify-web-player-e2e": {
-      "tags": [],
-      "implicitDependencies": ["spotify-web-player"]
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   }
 }
