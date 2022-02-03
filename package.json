@@ -41,7 +41,7 @@
     "@nrwl/cli": "13.7.1",
     "@nrwl/cypress": "13.7.1",
     "@nrwl/eslint-plugin-nx": "13.7.1",
-    "@nrwl/jest": "13.7.1",
+    "@nrwl/jest": "13.7.2",
     "@nrwl/linter": "13.7.1",
     "@nrwl/tao": "13.7.1",
     "@nrwl/workspace": "13.7.1",
