@@ -1,6 +1,7 @@
-module.exports = {
-  displayName: 'spotify-web-player',
-  preset: '../../jest.preset.js',
+/* eslint-disable */
+export default {
+  displayName: 'feature-auth',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +9,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/spotify-web-player',
+  coverageDirectory: '../../../coverage/libs/feature/auth',
   transform: {
     '^.+.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

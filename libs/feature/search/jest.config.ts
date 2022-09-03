@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'feature-auth',
+/* eslint-disable */
+export default {
+  displayName: 'feature-search',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +9,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/feature/auth',
+  coverageDirectory: '../../../coverage/libs/feature/search',
   transform: {
     '^.+.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

@@ -7,7 +7,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -27,7 +27,7 @@ export class SearchInputComponent implements OnInit, OnDestroy {
   @Input()
   placeholder = 'Search here!';
 
-  searchText = new FormControl('');
+  searchText = new UntypedFormControl('');
   private subscription = new Subscription();
 
   ngOnInit(): void {
