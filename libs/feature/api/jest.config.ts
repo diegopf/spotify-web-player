@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'feature-search',
+/* eslint-disable */
+export default {
+  displayName: 'feature-api',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +9,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/feature/search',
+  coverageDirectory: '../../../coverage/libs/feature/api',
   transform: {
     '^.+.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

@@ -9,11 +9,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/feature/album"
-          ],
+          "outputs": ["coverage/libs/feature/album"],
           "options": {
-            "jestConfig": "libs/feature/album/jest.config.js",
+            "jestConfig": "libs/feature/album/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -37,11 +35,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/feature/api"
-          ],
+          "outputs": ["coverage/libs/feature/api"],
           "options": {
-            "jestConfig": "libs/feature/api/jest.config.js",
+            "jestConfig": "libs/feature/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -65,11 +61,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/feature/artist"
-          ],
+          "outputs": ["coverage/libs/feature/artist"],
           "options": {
-            "jestConfig": "libs/feature/artist/jest.config.js",
+            "jestConfig": "libs/feature/artist/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -93,11 +87,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/feature/auth"
-          ],
+          "outputs": ["coverage/libs/feature/auth"],
           "options": {
-            "jestConfig": "libs/feature/auth/jest.config.js",
+            "jestConfig": "libs/feature/auth/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -121,11 +113,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/feature/search"
-          ],
+          "outputs": ["coverage/libs/feature/search"],
           "options": {
-            "jestConfig": "libs/feature/search/jest.config.js",
+            "jestConfig": "libs/feature/search/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -149,11 +139,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared"
-          ],
+          "outputs": ["coverage/libs/shared"],
           "options": {
-            "jestConfig": "libs/shared/jest.config.js",
+            "jestConfig": "libs/shared/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -177,9 +165,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/spotify-web-player",
             "index": "apps/spotify-web-player/src/index.html",
@@ -192,9 +178,7 @@
               "apps/spotify-web-player/src/assets",
               "apps/spotify-web-player/src/manifest.webmanifest"
             ],
-            "styles": [
-              "apps/spotify-web-player/src/styles.scss"
-            ],
+            "styles": ["apps/spotify-web-player/src/styles.scss"],
             "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "apps/spotify-web-player/ngsw-config.json"
@@ -267,11 +251,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/spotify-web-player"
-          ],
+          "outputs": ["coverage/apps/spotify-web-player"],
           "options": {
-            "jestConfig": "apps/spotify-web-player/jest.config.js",
+            "jestConfig": "apps/spotify-web-player/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -298,20 +280,14 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/spotify-web-player-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/spotify-web-player-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "spotify-web-player"
-      ]
+      "implicitDependencies": ["spotify-web-player"]
     }
   }
 }
