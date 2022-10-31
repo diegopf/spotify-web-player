@@ -43,7 +43,7 @@
     "@nrwl/eslint-plugin-nx": "14.6.3",
     "@nrwl/jest": "14.6.3",
     "@nrwl/linter": "14.6.3",
-    "@nrwl/workspace": "14.6.3",
+    "@nrwl/workspace": "15.0.4",
     "@types/jest": "28.1.8",
     "@types/node": "14.14.33",
     "@types/spotify-api": "0.0.11",
