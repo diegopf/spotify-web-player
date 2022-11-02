@@ -9,7 +9,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature/album"],
+          "outputs": ["{workspaceRoot}/coverage/libs/feature/album"],
           "options": {
             "jestConfig": "libs/feature/album/jest.config.ts",
             "passWithNoTests": true
@@ -35,7 +35,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature/api"],
+          "outputs": ["{workspaceRoot}/coverage/libs/feature/api"],
           "options": {
             "jestConfig": "libs/feature/api/jest.config.ts",
             "passWithNoTests": true
@@ -61,7 +61,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature/artist"],
+          "outputs": ["{workspaceRoot}/coverage/libs/feature/artist"],
           "options": {
             "jestConfig": "libs/feature/artist/jest.config.ts",
             "passWithNoTests": true
@@ -87,7 +87,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature/auth"],
+          "outputs": ["{workspaceRoot}/coverage/libs/feature/auth"],
           "options": {
             "jestConfig": "libs/feature/auth/jest.config.ts",
             "passWithNoTests": true
@@ -113,7 +113,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature/search"],
+          "outputs": ["{workspaceRoot}/coverage/libs/feature/search"],
           "options": {
             "jestConfig": "libs/feature/search/jest.config.ts",
             "passWithNoTests": true
@@ -139,7 +139,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared"],
+          "outputs": ["{workspaceRoot}/coverage/libs/shared"],
           "options": {
             "jestConfig": "libs/shared/jest.config.ts",
             "passWithNoTests": true
@@ -251,7 +251,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/spotify-web-player"],
+          "outputs": ["{workspaceRoot}/coverage/apps/spotify-web-player"],
           "options": {
             "jestConfig": "apps/spotify-web-player/jest.config.ts",
             "passWithNoTests": true
