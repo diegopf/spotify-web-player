@@ -64,7 +64,7 @@
           [mainLabel]="album.name"
         >
           <spotify-web-player-thumbnail
-            [image]="album.images[0]?.url"
+            [image]="album.images[0].url"
             [ariaLabel]="album.name"
           ></spotify-web-player-thumbnail>
         </spotify-web-player-card>
@@ -82,7 +82,7 @@
             [mainLabel]="artist.name"
           >
             <spotify-web-player-thumbnail
-              [image]="artist.images[0]?.url"
+              [image]="artist.images[0].url"
               [ariaLabel]="artist.name"
             ></spotify-web-player-thumbnail>
           </spotify-web-player-card>

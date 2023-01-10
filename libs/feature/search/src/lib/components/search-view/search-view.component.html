@@ -19,7 +19,7 @@
             [mainLabel]="artist.name"
           >
             <spotify-web-player-thumbnail
-              [image]="artist.images[1]?.url"
+              [image]="artist.images[1].url"
               [ariaLabel]="artist.name"
               [title]="artist.name"
             ></spotify-web-player-thumbnail>
@@ -41,7 +41,7 @@
             [secondaryLabel]="reduceArtists(album)"
           >
             <spotify-web-player-thumbnail
-              [image]="album.images[1]?.url"
+              [image]="album.images[1].url"
               [ariaLabel]="album.name"
               [title]="album.name"
             ></spotify-web-player-thumbnail>
