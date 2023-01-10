@@ -9,9 +9,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "{workspaceRoot}/coverage/libs/feature/album"
-          ],
+          "outputs": ["{workspaceRoot}/coverage/libs/feature/album"],
           "options": {
             "jestConfig": "libs/feature/album/jest.config.ts",
             "passWithNoTests": true
@@ -37,9 +35,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "{workspaceRoot}/coverage/libs/feature/api"
-          ],
+          "outputs": ["{workspaceRoot}/coverage/libs/feature/api"],
           "options": {
             "jestConfig": "libs/feature/api/jest.config.ts",
             "passWithNoTests": true
@@ -65,9 +61,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "{workspaceRoot}/coverage/libs/feature/artist"
-          ],
+          "outputs": ["{workspaceRoot}/coverage/libs/feature/artist"],
           "options": {
             "jestConfig": "libs/feature/artist/jest.config.ts",
             "passWithNoTests": true
@@ -93,9 +87,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "{workspaceRoot}/coverage/libs/feature/auth"
-          ],
+          "outputs": ["{workspaceRoot}/coverage/libs/feature/auth"],
           "options": {
             "jestConfig": "libs/feature/auth/jest.config.ts",
             "passWithNoTests": true
@@ -121,9 +113,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "{workspaceRoot}/coverage/libs/feature/search"
-          ],
+          "outputs": ["{workspaceRoot}/coverage/libs/feature/search"],
           "options": {
             "jestConfig": "libs/feature/search/jest.config.ts",
             "passWithNoTests": true
@@ -149,9 +139,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "{workspaceRoot}/coverage/libs/shared"
-          ],
+          "outputs": ["{workspaceRoot}/coverage/libs/shared"],
           "options": {
             "jestConfig": "libs/shared/jest.config.ts",
             "passWithNoTests": true
@@ -177,9 +165,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/spotify-web-player",
             "index": "apps/spotify-web-player/src/index.html",
@@ -192,9 +178,7 @@
               "apps/spotify-web-player/src/assets",
               "apps/spotify-web-player/src/manifest.webmanifest"
             ],
-            "styles": [
-              "apps/spotify-web-player/src/styles.scss"
-            ],
+            "styles": ["apps/spotify-web-player/src/styles.scss"],
             "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "apps/spotify-web-player/ngsw-config.json"
@@ -267,9 +251,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "{workspaceRoot}/coverage/apps/spotify-web-player"
-          ],
+          "outputs": ["{workspaceRoot}/coverage/apps/spotify-web-player"],
           "options": {
             "jestConfig": "apps/spotify-web-player/jest.config.ts",
             "passWithNoTests": true
@@ -298,20 +280,14 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/spotify-web-player-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/spotify-web-player-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "spotify-web-player"
-      ]
+      "implicitDependencies": ["spotify-web-player"]
     }
   }
 }
