@@ -1,0 +1,27 @@
+{
+  "name": "shared",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/shared/src",
+  "prefix": "spotify-web-player",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/shared"],
+      "options": {
+        "jestConfig": "libs/shared/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/src/**/*.ts",
+          "libs/shared/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

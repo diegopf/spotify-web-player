@@ -1,0 +1,104 @@
+{
+  "name": "spotify-web-player",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/spotify-web-player/src",
+  "prefix": "spotify-web-player",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/spotify-web-player",
+        "index": "apps/spotify-web-player/src/index.html",
+        "main": "apps/spotify-web-player/src/main.ts",
+        "polyfills": "apps/spotify-web-player/src/polyfills.ts",
+        "tsConfig": "apps/spotify-web-player/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/spotify-web-player/src/favicon.ico",
+          "apps/spotify-web-player/src/assets",
+          "apps/spotify-web-player/src/manifest.webmanifest"
+        ],
+        "styles": ["apps/spotify-web-player/src/styles.scss"],
+        "scripts": [],
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/spotify-web-player/ngsw-config.json"
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/spotify-web-player/src/environments/environment.ts",
+              "with": "apps/spotify-web-player/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/spotify-web-player/src/environments/environment.ts",
+              "with": "apps/spotify-web-player/src/environments/environment.local.ts"
+            }
+          ]
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "spotify-web-player:build:production"
+        },
+        "development": {
+          "browserTarget": "spotify-web-player:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "spotify-web-player:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/spotify-web-player/src/**/*.ts",
+          "apps/spotify-web-player/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/spotify-web-player"],
+      "options": {
+        "jestConfig": "apps/spotify-web-player/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
