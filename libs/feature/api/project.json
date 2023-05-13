@@ -1,0 +1,27 @@
+{
+  "name": "feature-api",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/feature/api/src",
+  "prefix": "spotify-web-player",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/feature/api"],
+      "options": {
+        "jestConfig": "libs/feature/api/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/api/src/**/*.ts",
+          "libs/feature/api/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
