@@ -12,10 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3.5.2
 
-      - name: Set up Node 14
+      - name: Set up Node 18
         uses: actions/setup-node@v3.6.0
         with:
-          node-version: '14'
+          node-version: '18'
           cache: 'npm'
 
       - name: Install npm dependencies
