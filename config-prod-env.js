@@ -16,7 +16,7 @@ fs.writeFile(
     'apps/spotify-web-player/src/environments/environment.prod.ts'
   ),
   environmentProdConfig,
-  (err: any) => {
+  (err) => {
     if (err) {
       console.error(err);
     }

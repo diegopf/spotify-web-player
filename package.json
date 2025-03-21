@@ -6,7 +6,7 @@
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js",
     "start": "nx serve",
-    "build": "ts-node config-prod-env.ts && nx build",
+    "build": "node config-prod-env.js && nx build",
     "test": "nx run-many --all --target=test --code-coverage=true",
     "test:auth": "nx test feature-auth --code-coverage=true",
     "test:ci": "npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI",
