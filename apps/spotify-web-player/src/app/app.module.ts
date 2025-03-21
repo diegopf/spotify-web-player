@@ -1,5 +1,5 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule, inject, provideAppInitializer } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AuthService, TokenInterceptor } from '@spotify-web-player/auth';
@@ -25,12 +25,10 @@ import { HttpErrorInterceptor } from './core/interceptors/httpError.interceptor'
     }),
   ],
   providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appInitProviderFactory,
-      deps: [AuthService],
-      multi: true,
-    },
+    provideAppInitializer(() => {
+        const initializerFn = (appInitProviderFactory)(inject(AuthService));
+        return initializerFn();
+      }),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
