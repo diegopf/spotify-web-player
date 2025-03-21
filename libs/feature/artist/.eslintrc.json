@@ -24,7 +24,8 @@
             "prefix": "spotify-web-player",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@angular-eslint/prefer-standalone": "off"
       }
     },
     {

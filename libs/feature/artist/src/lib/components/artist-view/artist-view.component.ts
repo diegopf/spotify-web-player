@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
   selector: 'spotify-web-player-artist-view',
   templateUrl: './artist-view.component.html',
   styleUrls: ['./artist-view.component.scss'],
+  standalone: false,
 })
 export class ArtistViewComponent implements OnInit, OnDestroy {
   artist!: SpotifyApi.SingleArtistResponse;
@@ -62,7 +63,7 @@ export class ArtistViewComponent implements OnInit, OnDestroy {
   }
 
   get followers() {
-    return `${this.artist?.followers.total} followers` ?? '0 followers';
+    return `${this.artist?.followers.total} followers`;
   }
 
   get relatedArtistsCollection() {

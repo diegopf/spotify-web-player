@@ -4,9 +4,10 @@ import { SpotifyApiService } from '@spotify-web-player/api';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'spotify-web-player-search-view',
-  templateUrl: './search-view.component.html',
-  styleUrls: ['./search-view.component.scss'],
+    selector: 'spotify-web-player-search-view',
+    templateUrl: './search-view.component.html',
+    styleUrls: ['./search-view.component.scss'],
+    standalone: false
 })
 export class SearchViewComponent implements OnInit, OnDestroy {
   artists: SpotifyApi.PagingObject<SpotifyApi.ArtistObjectFull> | undefined;

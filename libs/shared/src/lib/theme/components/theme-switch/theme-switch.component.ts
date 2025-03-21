@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ThemeService } from '../../services';
 
 @Component({
-  selector: 'spotify-web-player-theme-switch',
-  templateUrl: './theme-switch.component.html',
-  styleUrls: ['./theme-switch.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'spotify-web-player-theme-switch',
+    templateUrl: './theme-switch.component.html',
+    styleUrls: ['./theme-switch.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ThemeSwitchComponent implements OnInit {
   darkThemeEnabled = false;

@@ -4,9 +4,10 @@ import { SpotifyApiService } from '@spotify-web-player/api';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'spotify-web-player-album-view',
-  templateUrl: './album-view.component.html',
-  styleUrls: ['./album-view.component.scss'],
+    selector: 'spotify-web-player-album-view',
+    templateUrl: './album-view.component.html',
+    styleUrls: ['./album-view.component.scss'],
+    standalone: false
 })
 export class AlbumViewComponent implements OnInit, OnDestroy {
   album!: SpotifyApi.SingleAlbumResponse;

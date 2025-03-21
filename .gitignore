@@ -43,3 +43,4 @@ apps/spotify-web-player/src/environments/environment.local.ts
 .env
 
 .nx/cache
+.nx/workspace-data

@@ -6,10 +6,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'spotify-web-player-thumbnail',
-  templateUrl: './thumbnail.component.html',
-  styleUrls: ['./thumbnail.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'spotify-web-player-thumbnail',
+    templateUrl: './thumbnail.component.html',
+    styleUrls: ['./thumbnail.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ThumbnailComponent {
   @Input()
